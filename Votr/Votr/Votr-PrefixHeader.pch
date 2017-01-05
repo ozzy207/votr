@@ -14,18 +14,8 @@
 #import <Foundation/Foundation.h>
 //#import <UIKit/UIKit.h>
 #import "AppDefine.h"
-#import "Utils.h"
 #import "ProgressHUD.h"
 #import "AppDelegate.h"
-#import "TimelineTableViewCell.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <Parse/Parse.h>
-#import <ParseFacebookUtilsV4/ParseFacebookUtilsV4.h>
-#import "ResultsTableVC.h"
 
-#import "Poll.h"
-#import "ChoosePollVC.h"
-#import "AddCommentVC.h"
 
 #endif /* Votr_PrefixHeader_pch */

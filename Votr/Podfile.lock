@@ -1,0 +1,21 @@
+PODS:
+  - ASJTagsView (1.1)
+  - ProgressHUD (2.4)
+  - SCLAlertView-Objective-C (1.0.6)
+  - TTTAttributedLabel (2.0.0)
+
+DEPENDENCIES:
+  - ASJTagsView
+  - ProgressHUD
+  - SCLAlertView-Objective-C
+  - TTTAttributedLabel
+
+SPEC CHECKSUMS:
+  ASJTagsView: fc7526f5d76fd2a07a011b232a03a6d2b0a9dad1
+  ProgressHUD: 4b66b0df0e08519c5c7283a198fd2867a114c95a
+  SCLAlertView-Objective-C: ca78280817e66e74366b78579350dee2ff277e23
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
+
+PODFILE CHECKSUM: 39e7432ca1bc859dd2228aa05833f37db2a692e2
+
+COCOAPODS: 1.1.1
