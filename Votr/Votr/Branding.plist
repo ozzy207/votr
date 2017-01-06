@@ -24,14 +24,16 @@
 		<string>d70000</string>
 		<key>J</key>
 		<string>13659B</string>
+		<key>K</key>
+		<string>ffffff</string>
 	</dict>
 	<key>Font</key>
 	<dict>
-		<key>1</key>
+		<key>0</key>
 		<integer>13</integer>
-		<key>2</key>
+		<key>1</key>
 		<integer>17</integer>
-		<key>3</key>
+		<key>2</key>
 		<integer>20</integer>
 	</dict>
 </dict>

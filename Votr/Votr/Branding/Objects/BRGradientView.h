@@ -3,7 +3,7 @@
 //  Votr
 //
 //  Created by Edward Kim on 1/4/17.
-//  Copyright © 2017 Thomas Maas. All rights reserved.
+//  Copyright © 2017 DEDStop LLC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

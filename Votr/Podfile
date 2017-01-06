@@ -10,4 +10,7 @@ target 'Votr' do
   pod 'ASJTagsView'
   pod 'SCLAlertView-Objective-C'
   pod 'TTTAttributedLabel'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 end

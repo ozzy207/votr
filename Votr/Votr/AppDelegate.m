@@ -2,11 +2,13 @@
 //  AppDelegate.m
 //  Votr
 //
-//  Created by Thomas Maas on 12/09/16.
-//  Copyright © 2016 Thomas Maas. All rights reserved.
+//  Created by Edward Kim on 01/06/16.
+//  Copyright © 2016 DEDStop LLC. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "Branding.h"
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -17,19 +19,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    //Facebook config
-//    [[FBSDKApplicationDelegate sharedInstance] application:application
-//                             didFinishLaunchingWithOptions:launchOptions];
-//    
-//    //Parse
-//    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-//        configuration.applicationId = @"gbQMII4jBlu8KlqQuS0Yyc56BOCRnOKr479Uvotr";
-//        configuration.server = @"https://votrapp.herokuapp.com/parse";
-//    }]];
-//    
-//    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
-    
+    [FIRApp configure];
+	[[Branding shareInstance] intitialize];
+	
+	if ([FIRAuth auth].currentUser) {// User is signed in.
+
+	} else { // No user is signed in.
+		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Auth" bundle:nil];
+		UIViewController *controller = [storyboard instantiateInitialViewController];
+		self.window.rootViewController = controller;
+		[self.window makeKeyAndVisible];
+	}
+	
     return YES;
 }
 
@@ -60,7 +61,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+    //[self saveContext];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{

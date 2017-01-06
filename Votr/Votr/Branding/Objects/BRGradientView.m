@@ -3,7 +3,7 @@
 //  Votr
 //
 //  Created by Edward Kim on 1/4/17.
-//  Copyright © 2017 Thomas Maas. All rights reserved.
+//  Copyright © 2017 DEDStop LLC. All rights reserved.
 //
 
 #import "BRGradientView.h"
@@ -30,19 +30,19 @@
 	}
 	return self;
 }
-
+//
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
-	[(CAGradientLayer*)self.layer setColors:@[(id)[[[[Branding shareInstance] color:self.colorCode1] colorWithAlphaComponent:self.self.backgroundAlpha] CGColor], (id)[[[[Branding shareInstance] color:self.colorCode2] colorWithAlphaComponent:self.backgroundAlpha] CGColor]]];
+	[(CAGradientLayer*)self.layer setColors:@[(id)[[[[Branding shareInstance] color:self.colorCode1] colorWithAlphaComponent:self.backgroundAlpha] CGColor], (id)[[[[Branding shareInstance] color:self.colorCode2] colorWithAlphaComponent:self.backgroundAlpha] CGColor]]];
 }
-
+//
 - (void)setup
 {
 	_backgroundAlpha = 1.0;
 }
-
-#pragma mark - Setters
+//
+//#pragma mark - Setters
 + (Class)layerClass
 {
 	return [CAGradientLayer class];

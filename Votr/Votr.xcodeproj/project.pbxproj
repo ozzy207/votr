@@ -60,6 +60,9 @@
 		E5055BC81E1E13AE008C05B2 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5055BC41E1E13AE008C05B2 /* BaseTableViewCell.m */; };
 		E5055BCC1E1E1410008C05B2 /* UIImage+Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = E5055BCB1E1E1410008C05B2 /* UIImage+Overlay.m */; };
 		E5055BCF1E1E1639008C05B2 /* BRGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5055BCE1E1E1639008C05B2 /* BRGradientView.m */; };
+		E5ACC22D1E1FBA2E00C52183 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5ACC22C1E1FBA2E00C52183 /* GoogleService-Info.plist */; };
+		E5ACC2301E1FBCA400C52183 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC22F1E1FBCA400C52183 /* DataManager.m */; };
+		E5ACC2321E1FBDE900C52183 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ACC2311E1FBDE900C52183 /* Auth.storyboard */; };
 		ECEE71100CCA28417898556D /* libPods-Votr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 714E7950D3C267820DD6A439 /* libPods-Votr.a */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +140,10 @@
 		E5055BCB1E1E1410008C05B2 /* UIImage+Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Overlay.m"; sourceTree = "<group>"; };
 		E5055BCD1E1E1639008C05B2 /* BRGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRGradientView.h; sourceTree = "<group>"; };
 		E5055BCE1E1E1639008C05B2 /* BRGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRGradientView.m; sourceTree = "<group>"; };
+		E5ACC22C1E1FBA2E00C52183 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5ACC22E1E1FBCA400C52183 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		E5ACC22F1E1FBCA400C52183 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		E5ACC2311E1FBDE900C52183 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		ED4E2D69E8FBC17E2B4FEDB6 /* Pods-Votr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votr/Pods-Votr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,11 +210,13 @@
 				B3D578EF1D864E0B001845C7 /* AppDelegate.h */,
 				B3D578F01D864E0B001845C7 /* AppDelegate.m */,
 				E4B9DF3C1D940F7800726D0E /* AppDefine.h */,
+				E5ACC2311E1FBDE900C52183 /* Auth.storyboard */,
 				B3D578F51D864E0B001845C7 /* Main.storyboard */,
 				B3D578FB1D864E0B001845C7 /* Assets.xcassets */,
 				B3D578FD1D864E0B001845C7 /* LaunchScreen.storyboard */,
 				B3D579001D864E0B001845C7 /* Info.plist */,
 				E5055BA51E1E1280008C05B2 /* Branding.plist */,
+				E5ACC22C1E1FBA2E00C52183 /* GoogleService-Info.plist */,
 				E58FD9421E1D358C0063BF12 /* ViewControllers */,
 				E58FD9401E1D358C0063BF12 /* BaseViewControllers */,
 				E58FD9431E1D36520063BF12 /* Branding */,
@@ -334,6 +343,8 @@
 		E58FD9411E1D358C0063BF12 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				E5ACC22E1E1FBCA400C52183 /* DataManager.h */,
+				E5ACC22F1E1FBCA400C52183 /* DataManager.m */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -341,6 +352,7 @@
 		E58FD9421E1D358C0063BF12 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E5ACC2331E1FC12900C52183 /* Auth */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -353,6 +365,13 @@
 				E5055BAA1E1E1295008C05B2 /* Objects */,
 			);
 			path = Branding;
+			sourceTree = "<group>";
+		};
+		E5ACC2331E1FC12900C52183 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,7 +404,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Thomas Maas";
+				ORGANIZATIONNAME = "DEDStop LLC";
 				TargetAttributes = {
 					B3D578E81D864E0A001845C7 = {
 						CreatedOnToolsVersion = 8.0;
@@ -442,6 +461,8 @@
 				E41BB3ED1DF064AE001B0909 /* News.png in Resources */,
 				E41BB3E61DF064AE001B0909 /* Entertainment.png in Resources */,
 				E41BB3E31DF064AE001B0909 /* Animals.png in Resources */,
+				E5ACC2321E1FBDE900C52183 /* Auth.storyboard in Resources */,
+				E5ACC22D1E1FBA2E00C52183 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +534,7 @@
 				E5055BBA1E1E12B7008C05B2 /* BRLabel.m in Sources */,
 				E5055BBB1E1E12B7008C05B2 /* BRTextField.m in Sources */,
 				B3D578EE1D864E0B001845C7 /* main.m in Sources */,
+				E5ACC2301E1FBCA400C52183 /* DataManager.m in Sources */,
 				E5055BCF1E1E1639008C05B2 /* BRGradientView.m in Sources */,
 				E5055BB71E1E12B7008C05B2 /* BRBaseXibView.m in Sources */,
 			);
@@ -647,7 +669,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Votr/Votr-PrefixHeader.pch";
 				INFOPLIST_FILE = Votr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -677,7 +699,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Votr/Votr-PrefixHeader.pch";
 				INFOPLIST_FILE = Votr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
