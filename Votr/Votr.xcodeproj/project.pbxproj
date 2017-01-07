@@ -60,6 +60,7 @@
 		E5055BC81E1E13AE008C05B2 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5055BC41E1E13AE008C05B2 /* BaseTableViewCell.m */; };
 		E5055BCC1E1E1410008C05B2 /* UIImage+Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = E5055BCB1E1E1410008C05B2 /* UIImage+Overlay.m */; };
 		E5055BCF1E1E1639008C05B2 /* BRGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5055BCE1E1E1639008C05B2 /* BRGradientView.m */; };
+		E5538F431E205918008EDBEA /* AuthLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5538F421E205918008EDBEA /* AuthLandingViewController.m */; };
 		E5ACC22D1E1FBA2E00C52183 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5ACC22C1E1FBA2E00C52183 /* GoogleService-Info.plist */; };
 		E5ACC2301E1FBCA400C52183 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC22F1E1FBCA400C52183 /* DataManager.m */; };
 		E5ACC2321E1FBDE900C52183 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ACC2311E1FBDE900C52183 /* Auth.storyboard */; };
@@ -140,10 +141,13 @@
 		E5055BCB1E1E1410008C05B2 /* UIImage+Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Overlay.m"; sourceTree = "<group>"; };
 		E5055BCD1E1E1639008C05B2 /* BRGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRGradientView.h; sourceTree = "<group>"; };
 		E5055BCE1E1E1639008C05B2 /* BRGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRGradientView.m; sourceTree = "<group>"; };
+		E5538F411E205918008EDBEA /* AuthLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthLandingViewController.h; sourceTree = "<group>"; };
+		E5538F421E205918008EDBEA /* AuthLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthLandingViewController.m; sourceTree = "<group>"; };
 		E5ACC22C1E1FBA2E00C52183 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E5ACC22E1E1FBCA400C52183 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		E5ACC22F1E1FBCA400C52183 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		E5ACC2311E1FBDE900C52183 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		E5CDC4ED1E206B2D00287719 /* Votr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Votr.entitlements; sourceTree = "<group>"; };
 		ED4E2D69E8FBC17E2B4FEDB6 /* Pods-Votr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votr/Pods-Votr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +211,7 @@
 		B3D578EB1D864E0B001845C7 /* Votr */ = {
 			isa = PBXGroup;
 			children = (
+				E5CDC4ED1E206B2D00287719 /* Votr.entitlements */,
 				B3D578EF1D864E0B001845C7 /* AppDelegate.h */,
 				B3D578F01D864E0B001845C7 /* AppDelegate.m */,
 				E4B9DF3C1D940F7800726D0E /* AppDefine.h */,
@@ -370,6 +375,8 @@
 		E5ACC2331E1FC12900C52183 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				E5538F411E205918008EDBEA /* AuthLandingViewController.h */,
+				E5538F421E205918008EDBEA /* AuthLandingViewController.m */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -413,6 +420,9 @@
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
 							};
 						};
 					};
@@ -529,6 +539,7 @@
 				E5055BC71E1E13AE008C05B2 /* BaseTabBarController.m in Sources */,
 				E5055BB91E1E12B7008C05B2 /* BRImageView.m in Sources */,
 				E5055BC51E1E13AE008C05B2 /* BaseTableViewController.m in Sources */,
+				E5538F431E205918008EDBEA /* AuthLandingViewController.m in Sources */,
 				E5055BA91E1E128A008C05B2 /* Branding.m in Sources */,
 				E5055BC81E1E13AE008C05B2 /* BaseTableViewCell.m in Sources */,
 				E5055BBA1E1E12B7008C05B2 /* BRLabel.m in Sources */,
@@ -657,6 +668,7 @@
 			baseConfigurationReference = 991458384AE456F4C069FEBD /* Pods-Votr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Votr/Votr.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -687,6 +699,7 @@
 			baseConfigurationReference = ED4E2D69E8FBC17E2B4FEDB6 /* Pods-Votr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Votr/Votr.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";

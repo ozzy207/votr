@@ -25,16 +25,24 @@
 			<string>com.kevin.votr</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1030736676977741</string>
+				<string>fb403421153334516</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.596071362963-108thlupfv9jtt9sbnil0uuvdus7nttp</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>1030736676977741</string>
+	<string>403421153334516</string>
 	<key>FacebookDisplayName</key>
-	<string>Votr</string>
+	<string>VotrTemp</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbauth2</string>

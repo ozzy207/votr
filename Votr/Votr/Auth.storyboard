@@ -130,7 +130,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FirstVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="lIr-8n-6El" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6up-mT-EKh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="6up-mT-EKh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.078431372550000003" green="0.16862745100000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,43 +147,39 @@
             </objects>
             <point key="canvasLocation" x="374" y="131"/>
         </scene>
-        <!--View Controller-->
+        <!--AuthLanding-->
         <scene sceneID="QLh-s5-0tS">
             <objects>
-                <viewController id="U8u-z1-CnV" sceneMemberID="viewController">
+                <viewController id="U8u-z1-CnV" userLabel="AuthLanding" customClass="AuthLandingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gV2-SO-LJT"/>
                         <viewControllerLayoutGuide type="bottom" id="Wvu-GI-NcO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zu5-pC-ZFs" customClass="BRGradientView">
+                    <view key="view" contentMode="scaleToFill" id="zu5-pC-ZFs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blue" translatesAutoresizingMaskIntoConstraints="NO" id="O1J-Ie-lzs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-OW-Oh0">
-                                <rect key="frame" x="26" y="229.5" width="323" height="248"/>
+                                <rect key="frame" x="26" y="-6" width="323" height="720"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btc-jO-m5d" customClass="BRButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="47"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="746-ZB-LqX" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="U8u-z1-CnV" id="qOm-pS-gcf"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewc-T6-1Ml" customClass="GIDSignInButton">
+                                        <rect key="frame" x="0.0" y="148" width="323" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obW-LK-mvD" customClass="BRButton">
+                                        <rect key="frame" x="0.0" y="296" width="323" height="128"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Sign up with Facebook" image="Facebook"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="textColorCode" value="K"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="K"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="outline" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="sizeCode">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="weightCode">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEm-k1-ZZe" customClass="BRButton">
-                                        <rect key="frame" x="0.0" y="67" width="323" height="47"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                        <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Signup with Google" image="Google"/>
+                                        <state key="normal" title="Sign in with Username"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="k"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="textColorCode" value="K"/>
@@ -197,13 +193,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIW-z6-j1U">
-                                        <rect key="frame" x="153" y="134" width="17.5" height="47"/>
+                                        <rect key="frame" x="153" y="444" width="17.5" height="128"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-Rp-skn" customClass="BRButton">
-                                        <rect key="frame" x="0.0" y="201" width="323" height="47"/>
+                                        <rect key="frame" x="0.0" y="592" width="323" height="128"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                         <state key="normal" title="Create Account">
@@ -223,37 +219,34 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="btc-jO-m5d" firstAttribute="width" secondItem="xh3-OW-Oh0" secondAttribute="width" id="4J7-Gt-lcm"/>
-                                    <constraint firstItem="DEm-k1-ZZe" firstAttribute="width" secondItem="xh3-OW-Oh0" secondAttribute="width" id="PLZ-vJ-uDH"/>
+                                    <constraint firstItem="ewc-T6-1Ml" firstAttribute="width" secondItem="xh3-OW-Oh0" secondAttribute="width" id="avd-Hx-hKe"/>
+                                    <constraint firstItem="746-ZB-LqX" firstAttribute="width" secondItem="xh3-OW-Oh0" secondAttribute="width" id="hlq-B2-eHt"/>
                                     <constraint firstItem="7ui-Rp-skn" firstAttribute="width" secondItem="xh3-OW-Oh0" secondAttribute="width" id="hqP-Y3-NM3"/>
+                                    <constraint firstItem="obW-LK-mvD" firstAttribute="width" secondItem="xh3-OW-Oh0" secondAttribute="width" id="kR4-92-dME"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="xh3-OW-Oh0" firstAttribute="centerY" secondItem="zu5-pC-ZFs" secondAttribute="centerY" constant="20" id="2rF-kr-ynD"/>
+                            <constraint firstItem="Wvu-GI-NcO" firstAttribute="top" secondItem="O1J-Ie-lzs" secondAttribute="bottom" id="ChT-6M-TLo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xh3-OW-Oh0" secondAttribute="trailing" constant="10" id="GYX-wX-Gwl"/>
+                            <constraint firstAttribute="trailing" secondItem="O1J-Ie-lzs" secondAttribute="trailing" id="HGA-Nb-9GB"/>
                             <constraint firstItem="xh3-OW-Oh0" firstAttribute="leading" secondItem="zu5-pC-ZFs" secondAttribute="leadingMargin" constant="10" id="RHn-vu-ev5"/>
+                            <constraint firstItem="O1J-Ie-lzs" firstAttribute="top" secondItem="zu5-pC-ZFs" secondAttribute="top" id="Vz9-b3-buo"/>
+                            <constraint firstItem="O1J-Ie-lzs" firstAttribute="leading" secondItem="zu5-pC-ZFs" secondAttribute="leading" id="iBG-pB-JPq"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="colorCode1" value="A"/>
-                            <userDefinedRuntimeAttribute type="string" keyPath="colorCode2" value="J"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="backgroundAlpha">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="16W-uv-sDE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKn-70-Pxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374" y="807"/>
+            <point key="canvasLocation" x="373.60000000000002" y="844.22788605697156"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Facebook" width="12" height="26"/>
-        <image name="Google" width="28" height="27"/>
         <image name="Travel.png" width="750" height="546"/>
+        <image name="bg_blue" width="375" height="667"/>
         <image name="nav_next" width="54" height="13"/>
         <image name="topic_selected" width="174" height="114"/>
     </resources>

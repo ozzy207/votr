@@ -76,11 +76,15 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "ASJTagsView/ASJTagsView/Resources.bundle"
   install_resource "ASJTagsView/ASJTagsView/ASJTag.xib"
+  install_resource "GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib"
+  install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "ASJTagsView/ASJTagsView/Resources.bundle"
   install_resource "ASJTagsView/ASJTagsView/ASJTag.xib"
+  install_resource "GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib"
+  install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle"
 fi
 

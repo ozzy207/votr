@@ -7,6 +7,9 @@
 
 #import "BaseViewController.h"
 #import "AppDelegate.h"
+#import <FBSDKLoginKit/FBSDKLoginManager.h>
+
+@import Firebase;
 
 @interface BaseViewController ()
 
@@ -56,18 +59,39 @@
 
 - (IBAction)login:(id)sender
 {
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"main"];
-    appDelegate.window.rootViewController = controller;
-    [appDelegate.window makeKeyAndVisible];
-    
-    controller.view.alpha = 0.0;
-    
-    [UIView animateWithDuration:2.0 animations:^{
-        
-        controller.view.alpha = 1.0;
-        
-    }];
+	[self navigateToStoryboard:@"Main"];
+}
+
+- (IBAction)logout:(id)sender
+{
+	NSError *signOutError;
+	BOOL status = [[FIRAuth auth] signOut:&signOutError];
+	
+	FBSDKLoginManager *manager = [[FBSDKLoginManager alloc] init];
+	[manager logOut];
+	if (!status) {
+		NSLog(@"Error signing out: %@", signOutError);
+
+	}else{
+		[self navigateToStoryboard:@"Auth"];
+	}
+}
+
+- (void)navigateToStoryboard:(NSString*)storyboardName
+{
+	AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+	UIViewController *controller = [storyboard instantiateInitialViewController];
+	appDelegate.window.rootViewController = controller;
+	[appDelegate.window makeKeyAndVisible];
+	
+	controller.view.alpha = 0.0;
+	
+	[UIView animateWithDuration:0.3 animations:^{
+		
+		controller.view.alpha = 1.0;
+		
+	}];
 }
 
 @end

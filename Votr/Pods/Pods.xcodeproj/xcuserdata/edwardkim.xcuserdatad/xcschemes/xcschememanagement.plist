@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GTMOAuth2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>48A6938EA2D7156E587E222012DB6E1A</key>
+		<key>265EEBC0CBFEF5E233380B301BC65595</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58885A79D8F2FE6A57DF1D65A1A33E7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +62,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C1373B162B2AA9D0C4402DA3FC02158</key>
+		<key>72961C572832EE771B256E673A70F4B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>627ABC4FA79F10E5E3E92DCDCA3BB37E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BD8B2FD77AE2E0843C77E3322BC4C398</key>
+		<key>D22BD008A30B5DCC3B46BFF63D12AEF8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE868725B18AE240E550C5515AE66BC4</key>
+		<key>EAE45C123C22F83F258F201FDFBA835E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F26EDD403E4BDE939527AEF6713ABCE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
