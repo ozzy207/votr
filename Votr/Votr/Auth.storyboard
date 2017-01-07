@@ -191,6 +191,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="outline" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signIn:" destination="U8u-z1-CnV" eventType="touchUpInside" id="Ee4-2Y-qUK"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIW-z6-j1U">
                                         <rect key="frame" x="153" y="444" width="17.5" height="128"/>
@@ -216,6 +219,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="outline" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUp:" destination="U8u-z1-CnV" eventType="touchUpInside" id="bcn-M8-fut"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

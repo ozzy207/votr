@@ -16,6 +16,6 @@
 #import "AppDefine.h"
 #import "ProgressHUD.h"
 #import "AppDelegate.h"
-
+#import "Branding.h"
 
 #endif /* Votr_PrefixHeader_pch */

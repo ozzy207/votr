@@ -9,6 +9,7 @@
 #import "AuthLandingViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "SCLAlertView.h"
 @import GoogleSignIn;
 @import Firebase;
 
@@ -42,6 +43,79 @@ GIDSignInUIDelegate>
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - User Login
+- (IBAction)signIn:(id)sender
+{
+	SCLAlertView *alert = [[SCLAlertView alloc] init];
+	[alert.labelTitle setTextColor:[[Branding shareInstance] color:@"K"]];
+	alert.showAnimationType =  SCLAlertViewShowAnimationFadeIn;
+	
+	//Set background type (Default is SCLAlertViewBackgroundShadow)
+	alert.backgroundType = SCLAlertViewBackgroundBlur;
+	
+	//Overwrite SCLAlertView (Buttons, top circle and borders) colors
+	alert.customViewColor = [[Branding shareInstance] color:@"G"];
+	
+	//Set custom tint color for icon image.
+	alert.iconTintColor = [[Branding shareInstance] color:@"K"];
+	
+	//Overwrite SCLAlertView background color
+	alert.backgroundViewColor = [[Branding shareInstance] color:@"B"];
+	
+	UITextField *textField1 = [alert addTextField:@"Enter Email"];
+	UITextField *textField2 = [alert addTextField:@"Enter Password"];
+	[alert addButton:@"Continue" actionBlock:^(void) {
+		//NSLog(@"Text value: %@", textField.text);
+		[[FIRAuth auth] signInWithEmail:textField1.text
+							   password:textField2.text
+							 completion:^(FIRUser *user, NSError *error) {
+								 // ...
+								 [self login:nil];
+							 }];
+	}];
+	
+	[alert showEdit:self title:@"Sign in" subTitle:nil closeButtonTitle:@"Cancel" duration:0.0f];
+}
+
+- (IBAction)signUp:(id)sender
+{
+	SCLAlertView *alert = [[SCLAlertView alloc] init];
+	[alert.labelTitle setTextColor:[[Branding shareInstance] color:@"K"]];
+	alert.showAnimationType =  SCLAlertViewShowAnimationFadeIn;
+	
+	//Set background type (Default is SCLAlertViewBackgroundShadow)
+	alert.backgroundType = SCLAlertViewBackgroundBlur;
+	
+	//Overwrite SCLAlertView (Buttons, top circle and borders) colors
+	alert.customViewColor = [[Branding shareInstance] color:@"G"];
+	
+	//Set custom tint color for icon image.
+	alert.iconTintColor = [[Branding shareInstance] color:@"K"];
+	
+	//Overwrite SCLAlertView background color
+	alert.backgroundViewColor = [[Branding shareInstance] color:@"B"];
+	
+	UITextField *textField1 = [alert addTextField:@"Enter Email"];
+	UITextField *textField2 = [alert addTextField:@"Enter Password"];
+	
+	[alert addButton:@"Continue" actionBlock:^(void) {
+		[[FIRAuth auth]
+		 createUserWithEmail:textField1.text
+		 password:textField2.text
+		 completion:^(FIRUser *_Nullable user,
+					  NSError *_Nullable error) {
+			 if(error){
+				 
+			 }else{
+				 [self login:nil];
+			 }
+			 // ...
+		 }];
+	}];
+	
+	[alert showEdit:self title:@"Sign up" subTitle:nil closeButtonTitle:@"Cancel" duration:0.0f];
+}
 
 #pragma mark - Firebase
 - (void)firebaseAuthenticate:(FIRAuthCredential*)credential
