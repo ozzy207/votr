@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DB91A543590180C1AA7180517AEAFC3C'
+               BlueprintIdentifier = 'F90086F8476AC825F7B1388C8DF8D9B5'
                BlueprintName = 'ASJTagsView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libASJTagsView.a'>
+               BuildableName = 'ASJTagsView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

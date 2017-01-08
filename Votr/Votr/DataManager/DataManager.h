@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@import Firebase;
 
 @interface DataManager : NSObject
+@property (strong, nonatomic) FIRStorageReference *refStorage;
+@property (strong, nonatomic) FIRDatabaseReference *refDatabase;
+
++ (instancetype)sharedInstance;
 
 @end

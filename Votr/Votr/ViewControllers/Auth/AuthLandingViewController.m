@@ -9,16 +9,29 @@
 #import "AuthLandingViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import "SCLAlertView.h"
+#import "BRAlertView.h"
+#import "DataManager+Topics.h"
+#import "BRButton.h"
+
 @import GoogleSignIn;
 @import Firebase;
 
 @interface AuthLandingViewController ()<GIDSignInDelegate,
 GIDSignInUIDelegate>
+@property (strong, nonatomic) IBOutlet BRButton *facebookBtn;
+@property (strong, nonatomic) IBOutlet BRButton *googleBtn;
+@property (strong, nonatomic) IBOutlet BRButton *userBtn;
+@property (strong, nonatomic) IBOutlet BRButton *userCreateBtn;
 
 @end
 
 @implementation AuthLandingViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.navigationController setNavigationBarHidden:YES];
+}
 
 - (void)viewDidLoad
 {
@@ -44,34 +57,35 @@ GIDSignInUIDelegate>
 }
 */
 
+- (void)enableBtns:(BOOL)enable
+{
+	[self.googleBtn setEnabled:enable];
+	[self.facebookBtn setEnabled:enable];
+	[self.userCreateBtn setEnabled:enable];
+	[self.userBtn setEnabled:enable];
+}
+
 #pragma mark - User Login
 - (IBAction)signIn:(id)sender
 {
-	SCLAlertView *alert = [[SCLAlertView alloc] init];
-	[alert.labelTitle setTextColor:[[Branding shareInstance] color:@"K"]];
-	alert.showAnimationType =  SCLAlertViewShowAnimationFadeIn;
 	
-	//Set background type (Default is SCLAlertViewBackgroundShadow)
-	alert.backgroundType = SCLAlertViewBackgroundBlur;
-	
-	//Overwrite SCLAlertView (Buttons, top circle and borders) colors
-	alert.customViewColor = [[Branding shareInstance] color:@"G"];
-	
-	//Set custom tint color for icon image.
-	alert.iconTintColor = [[Branding shareInstance] color:@"K"];
-	
-	//Overwrite SCLAlertView background color
-	alert.backgroundViewColor = [[Branding shareInstance] color:@"B"];
+	BRAlertView *alert = [BRAlertView brandedInstance];
 	
 	UITextField *textField1 = [alert addTextField:@"Enter Email"];
 	UITextField *textField2 = [alert addTextField:@"Enter Password"];
+	[textField2 setSecureTextEntry:YES];
 	[alert addButton:@"Continue" actionBlock:^(void) {
 		//NSLog(@"Text value: %@", textField.text);
 		[[FIRAuth auth] signInWithEmail:textField1.text
 							   password:textField2.text
 							 completion:^(FIRUser *user, NSError *error) {
-								 // ...
-								 [self login:nil];
+								 
+								 if (error) {
+									 BRAlertView *alert = [BRAlertView brandedInstance];
+									 [alert showError:self title:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"OK" duration:0.0f];
+								 }else{
+									 [self getUserTopics:user];
+								 }
 							 }];
 	}];
 	
@@ -80,41 +94,43 @@ GIDSignInUIDelegate>
 
 - (IBAction)signUp:(id)sender
 {
-	SCLAlertView *alert = [[SCLAlertView alloc] init];
-	[alert.labelTitle setTextColor:[[Branding shareInstance] color:@"K"]];
-	alert.showAnimationType =  SCLAlertViewShowAnimationFadeIn;
-	
-	//Set background type (Default is SCLAlertViewBackgroundShadow)
-	alert.backgroundType = SCLAlertViewBackgroundBlur;
-	
-	//Overwrite SCLAlertView (Buttons, top circle and borders) colors
-	alert.customViewColor = [[Branding shareInstance] color:@"G"];
-	
-	//Set custom tint color for icon image.
-	alert.iconTintColor = [[Branding shareInstance] color:@"K"];
-	
-	//Overwrite SCLAlertView background color
-	alert.backgroundViewColor = [[Branding shareInstance] color:@"B"];
+	BRAlertView *alert = [BRAlertView brandedInstance];
 	
 	UITextField *textField1 = [alert addTextField:@"Enter Email"];
 	UITextField *textField2 = [alert addTextField:@"Enter Password"];
-	
-	[alert addButton:@"Continue" actionBlock:^(void) {
+	UITextField *textField3 = [alert addTextField:@"Confirm Password"];
+	[textField2 setSecureTextEntry:YES];
+	[textField3 setSecureTextEntry:YES];
+	__weak typeof(BRAlertView*)weakAlert = alert;
+	[alert addButton:@"Continue" validationBlock:^(void){
+		if (![textField2.text isEqualToString:textField3.text]) {
+
+			[weakAlert.labelTitle setText:@"Password mismatch!"];
+			return NO;
+		}
+		
+		return YES;
+	}actionBlock:^(void) {
+		[self enableBtns:NO];
 		[[FIRAuth auth]
 		 createUserWithEmail:textField1.text
 		 password:textField2.text
 		 completion:^(FIRUser *_Nullable user,
 					  NSError *_Nullable error) {
 			 if(error){
-				 
+				 [self enableBtns:YES];
+				 BRAlertView *alert = [BRAlertView brandedInstance];
+				 [alert showError:self title:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"OK" duration:0.0f];
 			 }else{
-				 [self login:nil];
+				 //[self login:nil];
+				 [self performSegueWithIdentifier:@"topics" sender:nil];
 			 }
 			 // ...
 		 }];
 	}];
 	
 	[alert showEdit:self title:@"Sign up" subTitle:nil closeButtonTitle:@"Cancel" duration:0.0f];
+
 }
 
 #pragma mark - Firebase
@@ -122,18 +138,41 @@ GIDSignInUIDelegate>
 {
 	[[FIRAuth auth] signInWithCredential:credential
 							  completion:^(FIRUser *user, NSError *error) {
-								  // ...
-								  
+								  [self enableBtns:YES];
 								  if (error) {
-									  // ...
-									  return;
+									  BRAlertView *alert = [BRAlertView brandedInstance];
+									  [alert showError:self title:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"OK" duration:0.0f];
 								  }else{
-									  [self login:nil];
+									  [self getUserTopics:user];
 								  }
 							  }];
 }
 
 #pragma mark - Facebook Delegate
+- (IBAction)facebookSignin:(UIButton*)sender
+{
+	[self enableBtns:NO];
+	FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+	[login logInWithReadPermissions:@[@"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+		if (error) {
+			// Process error
+			[self enableBtns:YES];
+			BRAlertView *alert = [BRAlertView brandedInstance];
+			[alert showError:self title:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"OK" duration:0.0f];
+		} else if (result.isCancelled) {
+			// Handle cancellations
+			[self enableBtns:YES];
+		} else {
+			FIRAuthCredential *credential = [FIRFacebookAuthProvider
+											 credentialWithAccessToken:[FBSDKAccessToken currentAccessToken]
+											 .tokenString];
+			
+			[self firebaseAuthenticate:credential];
+		}
+	}];
+}
+
+//Not used anymore since using custom button vs FBSDKLoginButton
 - (void)loginButton:(FBSDKLoginButton *)loginButton
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 			  error:(NSError *)error
@@ -152,9 +191,16 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 }
 
 #pragma mark - Google Delegate
+- (IBAction)googleSignin:(id)sender
+{
+	[self enableBtns:NO];
+	[[GIDSignIn sharedInstance] signIn];
+}
+
 - (void)signIn:(GIDSignIn *)signIn
 didSignInForUser:(GIDGoogleUser *)user
 	 withError:(NSError *)error {
+	
 	if (error == nil) {
 		GIDAuthentication *authentication = user.authentication;
 		FIRAuthCredential *credential =
@@ -162,7 +208,9 @@ didSignInForUser:(GIDGoogleUser *)user
 										 accessToken:authentication.accessToken];
 		[self firebaseAuthenticate:credential];
 	} else{
-	
+		[self.googleBtn setEnabled:YES];
+		BRAlertView *alert = [BRAlertView brandedInstance];
+		[alert showError:self title:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"OK" duration:0.0f];
 	}
 }
 
@@ -170,8 +218,29 @@ didSignInForUser:(GIDGoogleUser *)user
 didDisconnectWithUser:(GIDGoogleUser *)user
 	 withError:(NSError *)error
 {
+	[self enableBtns:YES];
 	// Perform any operations when the user disconnects from app here.
 	// ...
+}
+
+#pragma mark - userTopics
+- (void)getUserTopics:(FIRUser*)user
+{
+	[self enableBtns:NO];
+	[[DataManager sharedInstance] userTopics:user.uid onCompletion:^(NSArray *topics) {
+		[self enableBtns:YES];
+		if (![topics respondsToSelector:@selector(count)]) {
+			[self performSegueWithIdentifier:@"topics" sender:nil];
+			
+		}else{
+			if ([topics count]<=0) {
+				[self performSegueWithIdentifier:@"topics" sender:nil];
+			}else{
+				[self navigateToStoryboard:@"Main"];
+			}
+			
+		}
+	}];
 }
 
 @end

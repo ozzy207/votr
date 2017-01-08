@@ -1,0 +1,6 @@
+framework module Pods_Votr {
+  umbrella header "Pods-Votr-umbrella.h"
+
+  export *
+  module * { export * }
+}

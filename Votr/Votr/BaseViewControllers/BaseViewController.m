@@ -57,11 +57,6 @@
     
 }
 
-- (IBAction)login:(id)sender
-{
-	[self navigateToStoryboard:@"Main"];
-}
-
 - (IBAction)logout:(id)sender
 {
 	NSError *signOutError;

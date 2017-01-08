@@ -10,8 +10,9 @@
 #import "Branding.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-@import GoogleSignIn;
+#import "DataManager.h"
 
+@import GoogleSignIn;
 @import Firebase;
 
 @interface AppDelegate ()
@@ -36,9 +37,13 @@
 	} else { // No user is signed in.
 		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Auth" bundle:nil];
 		UIViewController *controller = [storyboard instantiateInitialViewController];
+		//UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Auth" bundle:nil];
+		//UIViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"topics"];
 		self.window.rootViewController = controller;
 		[self.window makeKeyAndVisible];
 	}
+	
+	[DataManager sharedInstance];
 	
     return YES;
 }

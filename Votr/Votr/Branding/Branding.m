@@ -25,10 +25,10 @@
 -(void)intitialize
 {
     [[UINavigationBar appearance] setBarTintColor:[self color:@"A"]];
-    [[UINavigationBar appearance] setTintColor:[self color:@"B"]];
+    [[UINavigationBar appearance] setTintColor:[self color:@"K"]];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes:
-     @{NSForegroundColorAttributeName:[self color:@"A"]}];
+     @{NSForegroundColorAttributeName:[self color:@"K"]}];
     
 //    [[UITabBar appearance] setBarTintColor:[self color:@"A"]];
 //    [[UITabBar appearance] setTintColor:[self color:@"B"]];

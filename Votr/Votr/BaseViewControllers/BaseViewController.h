@@ -9,11 +9,11 @@
 
 @interface BaseViewController : UIViewController
 //@interface BaseImageViewController : UIImageView
+- (void)navigateToStoryboard:(NSString*)storyboardName;
 - (IBAction)back:(id)sender;
 - (IBAction)home:(id)sender;
 - (IBAction)dismiss:(id)sender;
 - (IBAction)modal:(id)sender;
 - (IBAction)unwind:(UIStoryboardSegue*)sender;
-- (IBAction)login:(id)sender;
 @end
 
