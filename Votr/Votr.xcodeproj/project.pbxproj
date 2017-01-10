@@ -56,6 +56,8 @@
 		E5819CCB1E2261A700337D38 /* DataManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = E5819CCA1E2261A700337D38 /* DataManager+User.m */; };
 		E5819CCE1E229B7C00337D38 /* BRSelectionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5819CCD1E229B7C00337D38 /* BRSelectionImageView.m */; };
 		E5819CD11E229D5300337D38 /* UIView+constraints.m in Sources */ = {isa = PBXBuildFile; fileRef = E5819CD01E229D5300337D38 /* UIView+constraints.m */; };
+		E5819CD41E241EA300337D38 /* BRSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E5819CD31E241EA300337D38 /* BRSegmentedControl.m */; };
+		E5819CD71E2426A200337D38 /* BRTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5819CD61E2426A200337D38 /* BRTagsView.m */; };
 		E5ACC22D1E1FBA2E00C52183 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5ACC22C1E1FBA2E00C52183 /* GoogleService-Info.plist */; };
 		E5ACC2301E1FBCA400C52183 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC22F1E1FBCA400C52183 /* DataManager.m */; };
 		E5ACC2321E1FBDE900C52183 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ACC2311E1FBDE900C52183 /* Auth.storyboard */; };
@@ -142,6 +144,10 @@
 		E5819CCD1E229B7C00337D38 /* BRSelectionImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSelectionImageView.m; sourceTree = "<group>"; };
 		E5819CCF1E229D5300337D38 /* UIView+constraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+constraints.h"; sourceTree = "<group>"; };
 		E5819CD01E229D5300337D38 /* UIView+constraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+constraints.m"; sourceTree = "<group>"; };
+		E5819CD21E241EA300337D38 /* BRSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSegmentedControl.h; sourceTree = "<group>"; };
+		E5819CD31E241EA300337D38 /* BRSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSegmentedControl.m; sourceTree = "<group>"; };
+		E5819CD51E2426A200337D38 /* BRTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTagsView.h; sourceTree = "<group>"; };
+		E5819CD61E2426A200337D38 /* BRTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRTagsView.m; sourceTree = "<group>"; };
 		E5ACC22C1E1FBA2E00C52183 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E5ACC22E1E1FBCA400C52183 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		E5ACC22F1E1FBCA400C52183 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
@@ -308,6 +314,10 @@
 				E5CDC4EF1E214F1C00287719 /* BRAlertView.m */,
 				E5819CCC1E229B7C00337D38 /* BRSelectionImageView.h */,
 				E5819CCD1E229B7C00337D38 /* BRSelectionImageView.m */,
+				E5819CD21E241EA300337D38 /* BRSegmentedControl.h */,
+				E5819CD31E241EA300337D38 /* BRSegmentedControl.m */,
+				E5819CD51E2426A200337D38 /* BRTagsView.h */,
+				E5819CD61E2426A200337D38 /* BRTagsView.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -554,7 +564,9 @@
 				E5538F431E205918008EDBEA /* AuthLandingViewController.m in Sources */,
 				E5819CCE1E229B7C00337D38 /* BRSelectionImageView.m in Sources */,
 				E5055BA91E1E128A008C05B2 /* Branding.m in Sources */,
+				E5819CD71E2426A200337D38 /* BRTagsView.m in Sources */,
 				E57BCFBD1E224249004BD060 /* BaseCollectionViewController.m in Sources */,
+				E5819CD41E241EA300337D38 /* BRSegmentedControl.m in Sources */,
 				E5055BC81E1E13AE008C05B2 /* BaseTableViewCell.m in Sources */,
 				E5CDC4F01E214F1C00287719 /* BRAlertView.m in Sources */,
 				E5055BBA1E1E12B7008C05B2 /* BRLabel.m in Sources */,

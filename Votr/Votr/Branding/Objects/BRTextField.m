@@ -29,6 +29,18 @@
     return self;
 }
 
+- (void)layoutSubviews
+{
+	[super layoutSubviews];
+	if(self.style == 1){
+		[self setFont:[[Branding shareInstance] font:1 weight:4]];
+		[self setTintColor:[UIColor lightGrayColor]];
+		[self setFloatingLabelYPadding:3];
+		[self setFloatingLabelTextColor:[[Branding shareInstance] color:@"G"]];
+		[self setFloatingLabelActiveTextColor:[[Branding shareInstance] color:@"G"]];
+	}
+}
+
 #pragma mark - Error
 - (void)showError:(NSString*)errorMessage
 {
@@ -67,6 +79,37 @@
     CGRect textRect = [super rightViewRectForBounds:bounds];
     textRect.origin.x -= 10;
     return textRect;
+}
+
+- (CGRect)textRectForBounds:(CGRect)bounds
+{
+	if (self.style == 1) {
+		return CGRectInset(bounds, 8, 8);
+	}
+	return [super textRectForBounds:bounds];
+}
+
+// text position
+- (CGRect)editingRectForBounds:(CGRect)bounds
+{
+	if (self.style == 1) {
+		return CGRectInset(bounds, 8, 8);
+	}
+	return [super textRectForBounds:bounds];
+}
+
+- (void)drawRect:(CGRect)rect
+{
+	if (self.style == 1) {
+		UIBezierPath *path = [UIBezierPath bezierPath];
+		[path moveToPoint:CGPointMake(0.0, 0.0)];
+		[path addLineToPoint:CGPointMake(self.frame.size.width, 0.0)];
+		[path moveToPoint:CGPointMake(0.0, self.frame.size.height)];
+		[path addLineToPoint:CGPointMake(self.frame.size.width, self.frame.size.height)];
+		path.lineWidth = 1;
+		[[[Branding shareInstance] color:@"M"] setStroke];
+		[path stroke];
+	}
 }
 
 @end

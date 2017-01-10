@@ -29,6 +29,7 @@
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[self color:@"K"]}];
+	 [[UISegmentedControl appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[self font:1 weight:4], NSFontAttributeName, nil] forState:UIControlStateNormal];
     
 //    [[UITabBar appearance] setBarTintColor:[self color:@"A"]];
 //    [[UITabBar appearance] setTintColor:[self color:@"B"]];

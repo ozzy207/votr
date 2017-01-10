@@ -6,8 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
-@interface BRTextField : UITextField
+IB_DESIGNABLE
+@interface BRTextField : JVFloatLabeledTextField
+@property (nonatomic) IBInspectable NSInteger	style;
 - (void)showError:(NSString*)errorMessage;
 - (void)clearError;
 @end

@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JVFloatLabeledTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Votr.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -64,10 +69,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>WSTagsField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A4448146C785C426971111F117D773C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30D8663E251171865D3F4CD8719F102D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>595CE6889A835F9E0C942335B653DB06</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>76EDDD475FA50BCF93D9BF03ACE8A746</key>
+		<key>8C10D4C3930DC198F71CB0220F75FD9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF1BAA8825B7BEDF06D4AE599A84688F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B0568AF9399EFAED862103E508D86311</key>
+		<key>AD1394CC4738EBA83B8AE1E88E45DB81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE3B78DB0B0421C1F6B36147AD03358B</key>
+		<key>DCFF718A21BA29DB8BF556A1FAEF3B21</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D2ACD3AF74261D8BEE36BE7302DAF16B</key>
+		<key>E28D144C8BF6181DB6D118BA1A4C4CE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

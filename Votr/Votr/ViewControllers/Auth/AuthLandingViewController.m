@@ -70,7 +70,6 @@ GIDSignInUIDelegate>
 {
 	
 	BRAlertView *alert = [BRAlertView brandedInstance];
-	
 	UITextField *textField1 = [alert addTextField:@"Enter Email"];
 	UITextField *textField2 = [alert addTextField:@"Enter Password"];
 	[textField2 setSecureTextEntry:YES];

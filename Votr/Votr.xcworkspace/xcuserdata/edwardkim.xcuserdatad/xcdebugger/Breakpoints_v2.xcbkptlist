@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/ViewControllers/Auth/AuthLandingViewController.m"
-            timestampString = "505594304.649615"
+            timestampString = "505705675.729331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "-loginButton:didCompleteWithResult:error:"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/ViewControllers/Auth/AuthLandingViewController.m"
-            timestampString = "505594304.649615"
+            timestampString = "505705675.729331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "-facebookSignin:"
             landmarkType = "7">
             <Locations>
@@ -218,11 +218,11 @@
                   moduleName = "Votr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/edwardkim/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/Auth/AuthLandingViewController.m"
-                  timestampString = "505594277.259817"
+                  timestampString = "505685905.661579"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "165"
-                  endingLineNumber = "165"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
                   offsetFromSymbolStart = "286">
                </Location>
                <Location
@@ -233,11 +233,11 @@
                   moduleName = "Votr"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/edwardkim/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/Auth/AuthLandingViewController.m"
-                  timestampString = "505594277.260962"
+                  timestampString = "505685905.664249"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "165"
-                  endingLineNumber = "165"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
                   offsetFromSymbolStart = "294">
                </Location>
             </Locations>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/ViewControllers/Auth/AuthLandingViewController.m"
-            timestampString = "505594304.649615"
+            timestampString = "505705675.729331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "-facebookSignin:"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/ViewControllers/Auth/AuthLandingViewController.m"
-            timestampString = "505594304.649615"
+            timestampString = "505705675.729331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "-signIn:didSignInForUser:withError:"
             landmarkType = "7">
          </BreakpointContent>
@@ -288,6 +288,22 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/Branding/Objects/BRASJTagsView.m"
+            timestampString = "505685859.698904"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-drawRect:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

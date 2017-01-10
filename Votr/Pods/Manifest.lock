@@ -94,6 +94,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.7)
   - GTMSessionFetcher/Full (1.1.7):
     - GTMSessionFetcher/Core (= 1.1.7)
+  - JVFloatLabeledTextField (1.1.1)
   - ProgressHUD (2.4)
   - SCLAlertView-Objective-C (1.0.6)
   - SDWebImage (3.8.2):
@@ -104,6 +105,7 @@ PODS:
     - Fabric
   - TwitterKit (2.6.1):
     - TwitterCore (= 2.6.1)
+  - WSTagsField (2.0.0)
 
 DEPENDENCIES:
   - ASJTagsView
@@ -113,9 +115,11 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI (~> 1.0)
   - GoogleSignIn
+  - JVFloatLabeledTextField
   - ProgressHUD
   - SCLAlertView-Objective-C
   - TTTAttributedLabel
+  - WSTagsField
 
 SPEC CHECKSUMS:
   ASJTagsView: fc7526f5d76fd2a07a011b232a03a6d2b0a9dad1
@@ -138,13 +142,15 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   ProgressHUD: 4b66b0df0e08519c5c7283a198fd2867a114c95a
   SCLAlertView-Objective-C: ca78280817e66e74366b78579350dee2ff277e23
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   TwitterCore: a8aea8bdaf2abd6572c8f264707a4ea4dc2d0eab
   TwitterKit: d38c08d31dfd4ba604f95deca6cf8e174b5cbd96
+  WSTagsField: df3f020590e1c0f26d85293e4ce24c5d4fcc3c80
 
-PODFILE CHECKSUM: 7ece9c3a8ccd0661fad65603e0ba39515c87c11e
+PODFILE CHECKSUM: f6f1ad1083a281565360f2203fb4e7b9845b3790
 
 COCOAPODS: 1.1.1
