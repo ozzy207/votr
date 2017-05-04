@@ -12,6 +12,8 @@
 #import "BRAlertView.h"
 #import "DataManager+Topics.h"
 #import "BRButton.h"
+#import "DataManager+User.h"
+#import "DataManager+DeepLink.h"
 
 @import GoogleSignIn;
 @import Firebase;
@@ -98,6 +100,7 @@ GIDSignInUIDelegate>
 	UITextField *textField1 = [alert addTextField:@"Enter Email"];
 	UITextField *textField2 = [alert addTextField:@"Enter Password"];
 	UITextField *textField3 = [alert addTextField:@"Confirm Password"];
+	UITextField *textField4 = [alert addTextField:@"User Name"];
 	[textField2 setSecureTextEntry:YES];
 	[textField3 setSecureTextEntry:YES];
 	__weak typeof(BRAlertView*)weakAlert = alert;
@@ -121,8 +124,12 @@ GIDSignInUIDelegate>
 				 BRAlertView *alert = [BRAlertView brandedInstance];
 				 [alert showError:self title:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"OK" duration:0.0f];
 			 }else{
-				 //[self login:nil];
-				 [self performSegueWithIdentifier:@"topics" sender:nil];
+				 VTRUser *vuser = [DataManager sharedInstance].user;
+				 [vuser setDisplayName:textField4.text];
+				 [vuser setKey:user.uid];
+				 //[vuser setPhotoURL:user.photoURL];
+				 [[DataManager sharedInstance] updateUser:vuser onCompletion:nil];
+				 [self getUserTopics:user];
 			 }
 			 // ...
 		 }];
@@ -141,7 +148,13 @@ GIDSignInUIDelegate>
 								  if (error) {
 									  BRAlertView *alert = [BRAlertView brandedInstance];
 									  [alert showError:self title:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"OK" duration:0.0f];
+									  
 								  }else{
+									  VTRUser *vuser = [DataManager sharedInstance].user;
+									  [vuser setDisplayName:user.displayName];
+									  [vuser setKey:user.uid];
+									  [vuser setPhotoURL:user.photoURL];
+									  [[DataManager sharedInstance] updateUser:vuser onCompletion:nil];
 									  [self getUserTopics:user];
 								  }
 							  }];
@@ -199,15 +212,15 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 - (void)signIn:(GIDSignIn *)signIn
 didSignInForUser:(GIDGoogleUser *)user
 	 withError:(NSError *)error {
-	
+	[self enableBtns:YES];
 	if (error == nil) {
+		
 		GIDAuthentication *authentication = user.authentication;
 		FIRAuthCredential *credential =
 		[FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken
 										 accessToken:authentication.accessToken];
 		[self firebaseAuthenticate:credential];
 	} else{
-		[self.googleBtn setEnabled:YES];
 		BRAlertView *alert = [BRAlertView brandedInstance];
 		[alert showError:self title:@"Error" subTitle:error.localizedDescription closeButtonTitle:@"OK" duration:0.0f];
 	}
@@ -226,6 +239,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 - (void)getUserTopics:(FIRUser*)user
 {
 	[self enableBtns:NO];
+	[[DataManager sharedInstance] initialize];
 	[[DataManager sharedInstance] userTopics:user.uid onCompletion:^(NSArray *topics) {
 		[self enableBtns:YES];
 		if (![topics respondsToSelector:@selector(count)]) {
@@ -236,6 +250,20 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 				[self performSegueWithIdentifier:@"topics" sender:nil];
 			}else{
 				[self navigateToStoryboard:@"Main"];
+				NSString *postID = [[DataManager sharedInstance] getPostID];
+				if (postID) {
+					[[DataManager sharedInstance] deepLinkPost:postID toUser:[FIRAuth auth].currentUser.uid completion:^(NSError *error) {
+						NSLog(@"linked");
+						//Navigate to Post
+						[[DataManager sharedInstance] clearPostID];
+						if (!error) {
+							AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+							[delegate navigateModalToPost:postID];
+						}
+						
+					}];
+					
+				}
 			}
 			
 		}

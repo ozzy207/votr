@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>596071362963-108thlupfv9jtt9sbnil0uuvdus7nttp.apps.googleusercontent.com</string>
+	<string>501934744776-dcpusdu0ki608b2utrq2he43fvdhf3d6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.596071362963-108thlupfv9jtt9sbnil0uuvdus7nttp</string>
+	<string>com.googleusercontent.apps.501934744776-dcpusdu0ki608b2utrq2he43fvdhf3d6</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAcrHtDsFv7SfzSISDGtyYI-2Ff1pcRGy0</string>
+	<string>AIzaSyC24P3ohBzN7Gf3LbpWucCdKm0-a-dIapI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>596071362963</string>
+	<string>501934744776</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.kevin.votr</string>
+	<string>com.dedstop.votr</string>
 	<key>PROJECT_ID</key>
-	<string>votr-b14fb</string>
+	<string>votr2-51a84</string>
 	<key>STORAGE_BUCKET</key>
-	<string>votr-b14fb.appspot.com</string>
+	<string>votr2-51a84.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
 	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:596071362963:ios:cbf4b4a37e01f15b</string>
+	<string>1:501934744776:ios:de861c0c008cfa38</string>
 	<key>DATABASE_URL</key>
-	<string>https://votr-b14fb.firebaseio.com</string>
+	<string>https://votr2-51a84.firebaseio.com</string>
 </dict>
 </plist>

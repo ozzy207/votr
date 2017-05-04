@@ -139,7 +139,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FirstVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="lIr-8n-6El" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="6up-mT-EKh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6up-mT-EKh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.078431372550000003" green="0.16862745100000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -278,10 +278,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="k"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="K"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="textColorCode" value="k"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="sizeCode">
-                                                <integer key="value" value="1"/>
+                                                <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="weightCode">
                                                 <integer key="value" value="4"/>

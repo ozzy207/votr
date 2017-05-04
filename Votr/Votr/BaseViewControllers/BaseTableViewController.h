@@ -12,5 +12,5 @@
 @interface BaseTableViewController : BaseViewController <UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *data;
-
+- (void)sizeHeaderToFit;
 @end

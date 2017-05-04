@@ -9,5 +9,5 @@
 #import "BaseCollectionViewController.h"
 
 @interface AuthTopicViewController : BaseCollectionViewController
-
+@property (nonatomic) BOOL editUser;
 @end

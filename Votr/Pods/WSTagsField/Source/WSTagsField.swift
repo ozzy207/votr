@@ -20,7 +20,7 @@ open class WSTagsField: UIView {
     fileprivate let textField = BackspaceDetectingTextField()
 
 	open override func draw(_ rect: CGRect) {
-		var aPath = UIBezierPath()
+		let aPath = UIBezierPath()
 		
 		aPath.move(to: CGPoint(x: 0, y: 0))
 		
@@ -135,6 +135,9 @@ open class WSTagsField: UIView {
     internal var tagViews = [WSTagView]()
     fileprivate var intrinsicContentHeight: CGFloat = 0.0
 
+	open func stringArray() -> [String]{
+		return self.tags.map{$0.text}
+	}
 
     // MARK: - Events
 

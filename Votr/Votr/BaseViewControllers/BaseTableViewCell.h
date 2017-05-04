@@ -7,17 +7,17 @@
 
 #import <UIKit/UIKit.h>
 #import "BRLabel.h"
-
+#import "BRBaseSearchCellView.h"
 
 @interface BaseTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet BRLabel *titleLabel;
 
-@property (strong, nonatomic) IBOutlet BRLabel *detaiLabel1;
+@property (strong, nonatomic) IBOutlet BRLabel *detailLabel1;
 
 @property (strong, nonatomic) IBOutlet UIImageView *detailImageView;
 
-
+@property (strong, nonatomic) IBOutlet BRBaseSearchCellView *searchView;
 
 
 @end

@@ -8,7 +8,7 @@
 #import "BaseTableViewController.h"
 
 @interface BaseTableViewController ()
-
+@property (strong, nonatomic) NSMutableDictionary *rowHeights;
 @end
 
 @implementation BaseTableViewController
@@ -17,7 +17,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self home:nil];
+    //[self home:nil];
+	
+	[self.tableView setRowHeight:UITableViewAutomaticDimension];
+	[self.tableView setEstimatedRowHeight:45];
+	
+	self.rowHeights = [NSMutableDictionary	new];
     // Do any additional setup after loading the view.
 }
 
@@ -25,6 +30,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)sizeHeaderToFit
+{
+	//set the tableHeaderView so that the required height can be determined
+	UIView *header = self.tableView.tableHeaderView;
+	[header setNeedsLayout];
+	[header layoutIfNeeded];
+	CGFloat height = [header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+	
+	//update the header's frame and set it again
+	CGRect headerFrame = header.frame;
+	headerFrame.size.height = height;
+	header.frame = headerFrame;
+	self.tableView.tableHeaderView = header;
 }
 
 /*
@@ -38,6 +58,16 @@
 */
 
 #pragma mark - UITableView Datasource
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	self.rowHeights[indexPath] = @(cell.frame.size.height);
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return self.rowHeights[indexPath]? [self.rowHeights[indexPath] floatValue]:45;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 5;
@@ -45,26 +75,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//Here you are creating a static variable
-//Declaring a variable static limits its scope to just the class
-//For a base instance this will be ok since it will get overridden with a child class.
 
-//Note: your "Default" is capatalized. We need to stay with the camel case for iOS.
-//Also default is a name already taken up by apple, and the name isn't descriptive enough.
-//Something that makes sence for ios is to call this variable identifier since we are using it in the
-//[tableView dequeueReusableCellWithIdentifier:] method. The method asks for something it is good practice too keep it simple and give it exactly what it asks for.
-//Ex
-
-/*
-
-What we can break this method down to just being.
-
-static NSString *identifier = @"default";
-UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
- 
-return cell;
- 
-*/
 	static NSString *identifier = @"default"; //added
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];

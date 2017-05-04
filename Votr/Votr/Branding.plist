@@ -30,6 +30,8 @@
 		<string>EEEEEE</string>
 		<key>M</key>
 		<string>C8C7CC</string>
+		<key>N</key>
+		<string>BD2026</string>
 	</dict>
 	<key>Font</key>
 	<dict>
@@ -41,6 +43,8 @@
 		<string>18</string>
 		<key>3</key>
 		<integer>20</integer>
+		<key>4</key>
+		<string>36</string>
 	</dict>
 </dict>
 </plist>

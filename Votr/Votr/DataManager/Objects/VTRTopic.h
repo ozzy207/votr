@@ -9,7 +9,6 @@
 #import "BaseDataObject.h"
 
 @interface VTRTopic : BaseDataObject
-@property (copy, nonatomic) NSString *key;
-@property (copy, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *key;
 + (instancetype)instanceWithKey:(NSString*)key title:(NSString*)title;
 @end

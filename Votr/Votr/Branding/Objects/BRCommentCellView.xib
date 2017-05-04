@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BRCommentCellView">
+            <connections>
+                <outlet property="button1" destination="CGA-W6-QBE" id="OBz-62-ALg"/>
+                <outlet property="detailLabel1" destination="0uo-HM-Jp5" id="GLJ-MB-2Hb"/>
+                <outlet property="detailLabel2" destination="AY6-Ik-pay" id="lKa-cG-dJc"/>
+                <outlet property="imageView" destination="Ly8-lv-zC1" id="kkv-pT-Qmu"/>
+                <outlet property="leadingConstraint" destination="Jbe-2H-uXU" id="o7p-ax-aDt"/>
+                <outlet property="titleLabel" destination="edM-Ji-8mH" id="lZt-hG-Okp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Y33-H2-ct2">
+            <rect key="frame" x="0.0" y="0.0" width="447" height="53"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Ly8-lv-zC1" customClass="BRImageView">
+                    <rect key="frame" x="8" y="8" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Ly8-lv-zC1" secondAttribute="height" multiplier="1:1" id="N4E-AZ-0tu"/>
+                        <constraint firstAttribute="width" constant="30" id="fD0-Zy-Spe"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="circle" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="eschumacher" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edM-Ji-8mH" customClass="BRLabel">
+                    <rect key="frame" x="43" y="13" width="309" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="E"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="sizeCode">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="weightCode">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalCompressionResistancePriority="749" text="eschumacher" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uo-HM-Jp5" customClass="BRLabel">
+                    <rect key="frame" x="43" y="28" width="309" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="B"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="sizeCode">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="weightCode">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGA-W6-QBE">
+                    <rect key="frame" x="362" y="2" width="35" height="42"/>
+                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="5" maxY="10"/>
+                    <state key="normal" image="Thumbs"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY6-Ik-pay" customClass="BRLabel">
+                    <rect key="frame" x="397" y="13" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="E"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="sizeCode">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="weightCode">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailingMargin" secondItem="AY6-Ik-pay" secondAttribute="trailing" id="09n-mb-WmD"/>
+                <constraint firstItem="0uo-HM-Jp5" firstAttribute="leading" secondItem="edM-Ji-8mH" secondAttribute="leading" id="8HK-OU-FAL"/>
+                <constraint firstItem="Ly8-lv-zC1" firstAttribute="top" secondItem="edM-Ji-8mH" secondAttribute="top" constant="-5" id="8Hp-M5-DJ4"/>
+                <constraint firstItem="AY6-Ik-pay" firstAttribute="leading" secondItem="CGA-W6-QBE" secondAttribute="trailing" id="9JT-TK-FHx"/>
+                <constraint firstItem="Ly8-lv-zC1" firstAttribute="leading" secondItem="Y33-H2-ct2" secondAttribute="leadingMargin" id="Jbe-2H-uXU"/>
+                <constraint firstItem="0uo-HM-Jp5" firstAttribute="trailing" secondItem="edM-Ji-8mH" secondAttribute="trailing" id="Qqj-xv-Dab"/>
+                <constraint firstItem="AY6-Ik-pay" firstAttribute="centerY" secondItem="CGA-W6-QBE" secondAttribute="centerY" id="Sat-2s-0Gv"/>
+                <constraint firstAttribute="bottomMargin" secondItem="0uo-HM-Jp5" secondAttribute="bottom" id="c6l-FU-4d2"/>
+                <constraint firstItem="0uo-HM-Jp5" firstAttribute="top" secondItem="edM-Ji-8mH" secondAttribute="bottom" id="ckh-El-3cr"/>
+                <constraint firstItem="edM-Ji-8mH" firstAttribute="top" secondItem="Y33-H2-ct2" secondAttribute="topMargin" constant="5" id="oCt-UU-agq"/>
+                <constraint firstItem="CGA-W6-QBE" firstAttribute="leading" secondItem="edM-Ji-8mH" secondAttribute="trailing" constant="10" id="xft-G6-SX6"/>
+                <constraint firstItem="CGA-W6-QBE" firstAttribute="centerY" secondItem="Ly8-lv-zC1" secondAttribute="centerY" id="y4R-7X-WhS"/>
+                <constraint firstItem="edM-Ji-8mH" firstAttribute="leading" secondItem="Ly8-lv-zC1" secondAttribute="trailing" constant="5" id="zFr-ut-gaG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="69.5" y="-253.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Thumbs" width="20" height="20"/>
+        <image name="default_avatar" width="174" height="174"/>
+    </resources>
+</document>

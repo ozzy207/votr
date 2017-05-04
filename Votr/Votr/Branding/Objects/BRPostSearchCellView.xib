@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BRPostSearchCellView">
+            <connections>
+                <outlet property="detailLabel1" destination="kk9-T8-7BX" id="eBx-v7-dKW"/>
+                <outlet property="detailLabel2" destination="ghU-jO-7NE" id="sXg-CR-DIl"/>
+                <outlet property="detailLabel3" destination="acV-0h-PM0" id="ijN-dC-d0Q"/>
+                <outlet property="detailStackView" destination="a1h-ga-V4E" id="dz4-mO-FXN"/>
+                <outlet property="imageView" destination="ftD-Vf-2ux" id="ywI-v1-xEE"/>
+                <outlet property="statusView" destination="xDk-OX-A0n" id="8lO-hY-EqA"/>
+                <outlet property="titleLabel" destination="C6e-vd-PpP" id="U3u-Ze-UQU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="447" height="66"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDk-OX-A0n" customClass="BRView">
+                    <rect key="frame" x="0.0" y="0.0" width="6" height="66"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="6" id="Tai-Ts-sXt"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Which dog is cuter?!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6e-vd-PpP" customClass="BRLabel">
+                    <rect key="frame" x="16" y="8" width="182.5" height="23.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="E"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="sizeCode">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="weightCode">
+                            <integer key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a1h-ga-V4E">
+                    <rect key="frame" x="203" y="14" width="30" height="12"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Private" translatesAutoresizingMaskIntoConstraints="NO" id="eBm-Vf-Tkf" customClass="BRImageView">
+                            <rect key="frame" x="0.0" y="0.0" width="15" height="12"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="imageColor" value="E"/>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="9Ri-yB-EAd">
+                            <rect key="frame" x="20" y="0.0" width="10" height="12"/>
+                        </imageView>
+                    </subviews>
+                </stackView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ftD-Vf-2ux" customClass="BRImageView">
+                    <rect key="frame" x="16" y="33.5" width="24.5" height="24.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ftD-Vf-2ux" secondAttribute="height" multiplier="1:1" id="6eI-nw-gxP"/>
+                        <constraint firstAttribute="width" constant="24" id="pJi-iQ-zV8"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="circle" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eschumacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk9-T8-7BX" customClass="BRLabel">
+                    <rect key="frame" x="45" y="38.5" width="76.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="E"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="sizeCode">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="weightCode">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="i3u-U3-m6z">
+                    <rect key="frame" x="372" y="14" width="43" height="31"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-fl-Jhw">
+                            <rect key="frame" x="0.0" y="0.0" width="43" height="14.5"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="ResultsSmall" translatesAutoresizingMaskIntoConstraints="NO" id="wy8-rc-iDN" customClass="BRImageView">
+                                    <rect key="frame" x="0.0" y="0.0" width="15" height="14.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="imageColor" value="E"/>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1210" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-jO-7NE" customClass="BRLabel">
+                                    <rect key="frame" x="17" y="0.0" width="26" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="E"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="sizeCode">
+                                            <integer key="value" value="0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="weightCode">
+                                            <integer key="value" value="0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aW9-oS-RMD">
+                            <rect key="frame" x="0.0" y="16.5" width="43" height="14.5"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="Message" translatesAutoresizingMaskIntoConstraints="NO" id="KJ2-Zf-093" customClass="BRImageView">
+                                    <rect key="frame" x="0.0" y="0.0" width="12" height="14.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="imageColor" value="E"/>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="389" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acV-0h-PM0" customClass="BRLabel">
+                                    <rect key="frame" x="14" y="0.0" width="29" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="E"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="sizeCode">
+                                            <integer key="value" value="0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="weightCode">
+                                            <integer key="value" value="0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chevron" translatesAutoresizingMaskIntoConstraints="NO" id="XeO-9t-2Vp" customClass="BRImageView">
+                    <rect key="frame" x="423" y="19.5" width="16" height="27"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="imageColor" value="M"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottomMargin" secondItem="ftD-Vf-2ux" secondAttribute="bottom" id="0co-BX-Jaw"/>
+                <constraint firstAttribute="trailingMargin" secondItem="XeO-9t-2Vp" secondAttribute="trailing" id="5NJ-mF-HGm"/>
+                <constraint firstItem="XeO-9t-2Vp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8CM-BC-zyn"/>
+                <constraint firstItem="C6e-vd-PpP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="AUH-YW-ebS"/>
+                <constraint firstItem="xDk-OX-A0n" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="G37-29-7bq"/>
+                <constraint firstAttribute="bottom" secondItem="xDk-OX-A0n" secondAttribute="bottom" id="LbY-eO-DW3"/>
+                <constraint firstItem="kk9-T8-7BX" firstAttribute="centerY" secondItem="ftD-Vf-2ux" secondAttribute="centerY" id="TLc-IA-LVQ"/>
+                <constraint firstItem="a1h-ga-V4E" firstAttribute="centerY" secondItem="C6e-vd-PpP" secondAttribute="centerY" id="TNJ-gA-VND"/>
+                <constraint firstItem="i3u-U3-m6z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a1h-ga-V4E" secondAttribute="trailing" constant="10" id="V0o-jX-0I2"/>
+                <constraint firstItem="ftD-Vf-2ux" firstAttribute="top" secondItem="C6e-vd-PpP" secondAttribute="bottom" constant="2" id="X3w-qG-Kvc"/>
+                <constraint firstItem="C6e-vd-PpP" firstAttribute="leading" secondItem="xDk-OX-A0n" secondAttribute="trailing" constant="10" id="Xra-s2-RSE"/>
+                <constraint firstItem="xDk-OX-A0n" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a0M-rj-wJv"/>
+                <constraint firstItem="i3u-U3-m6z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="6" id="eCZ-UO-GaL"/>
+                <constraint firstItem="XeO-9t-2Vp" firstAttribute="leading" secondItem="i3u-U3-m6z" secondAttribute="trailing" constant="8" id="sSR-Qe-6Jc"/>
+                <constraint firstItem="ftD-Vf-2ux" firstAttribute="leading" secondItem="C6e-vd-PpP" secondAttribute="leading" id="snr-bb-hoV"/>
+                <constraint firstItem="a1h-ga-V4E" firstAttribute="leading" secondItem="C6e-vd-PpP" secondAttribute="trailing" constant="4.5" id="wYS-z8-xEb"/>
+                <constraint firstItem="kk9-T8-7BX" firstAttribute="leading" secondItem="ftD-Vf-2ux" secondAttribute="trailing" constant="5" id="xdo-aj-DQW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="69.5" y="-247"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Chevron" width="16" height="27"/>
+        <image name="Clock" width="10" height="10"/>
+        <image name="Message" width="12" height="11"/>
+        <image name="Private" width="15" height="12"/>
+        <image name="ResultsSmall" width="15" height="12"/>
+        <image name="default_avatar" width="174" height="174"/>
+    </resources>
+</document>

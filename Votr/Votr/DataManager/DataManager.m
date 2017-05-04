@@ -7,9 +7,10 @@
 //
 
 #import "DataManager.h"
+#import "VTRTag.h"
+#import "UIImageView+WebCache.h"
 
 @interface DataManager ()
-
 @end
 
 @implementation DataManager
@@ -27,14 +28,25 @@
 		_sharedObject = [[self alloc] init];
 		[_sharedObject setRefStorage:[FIRStorage storage].reference];
 		[_sharedObject setRefDatabase:[FIRDatabase database].reference];
-		[_sharedObject initializeTopics];
+		[_sharedObject initialize];
 	});
 	
 	// returns the same object each time
 	return _sharedObject;
 }
 
-- (void)initializeTopics
+- (instancetype)init
+{
+	if (self = [super init]) {
+		_tasks = [NSMutableArray new];
+		_snapshots = [NSMutableArray new];
+		_tags = [NSMutableArray new];
+		
+	}
+	return self;
+}
+
+- (void)initialize
 {
 //	NSArray *topicsArray = @[@"Animals",@"Art",@"Celebrity",@"Entertainment",@"Fashion",@"Finance",@"Food",@"Funny",@"Health",@"LifeyStyle",@"News",@"Photography",@"Politics",@"Science",@"Sports",@"Travel"];
 //	FIRDatabaseReference *topics = [self.refDatabase child:@"topics"];
@@ -45,25 +57,44 @@
 //	}
 
 	//[self queryTopics:@"New"];
-}
+	//[[SDImageCache sharedImageCache] setMaxCacheSize:10*1000];
+	
+	[[self.refDatabase child:@"tags"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+		NSMutableArray *marray = [NSMutableArray new];
+		if ([snapshot.value isKindOfClass:[NSDictionary class]]) {
+			for (NSString *key in [snapshot.value allKeys]) {
+				NSDictionary *dict = [snapshot.value objectForKey:key];
+				VTRTag *tag = [VTRTag instanceFromDictionary:dict];
+				[tag setKey:key];
+				[marray addObject:tag];
+			}
+			self.tags = marray;
+		}
 
-- (void)queryTopics:(NSString*)string
-{
-	FIRDatabaseReference *topics = [self.refDatabase child:@"topics"];
-//	FIRDatabaseQuery *query = [topics queryOrderedByChild:@"title"];
-//	[query queryStartingAtValue:String];
-	[topics observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-		NSLog(@"%@",snapshot);
-		//NSMutableArray *marray = [snapshot.value mutableCopy];
-		NSMutableDictionary *titles = [snapshot.value mutableCopy];
-		//titles al
-//		titles = [titles filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"ANY SELF contains[c] %@",string]];
-//		[titles filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-//			return [evaluatedObject[@"title"] containsString:string];
-//		}]];
-//		[marray filterUsingPredicate:[NSPredicate predicateWithFormat:@"ANY title like %@",string]];
-		NSLog(@"%@",titles);
+	} withCancelBlock:^(NSError * _Nonnull error) {
+		NSLog(@"%@", error.localizedDescription);
 	}];
 	
+	if ([FIRAuth auth].currentUser) {
+		FIRDatabaseReference *usersRef = [self.refDatabase child:@"users"];
+		[[usersRef child:[FIRAuth auth].currentUser.uid] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+			if ([snapshot.value isKindOfClass:[NSDictionary class]]) {
+				self.user = [VTRUser instanceFromDictionary:snapshot.value];
+			}
+		} withCancelBlock:^(NSError * _Nonnull error) {
+			NSLog(@"%@", error.localizedDescription);
+		}];
+	}
+
 }
+
+- (VTRUser*)user
+{
+	if (_user == nil) {
+		_user = [VTRUser new];
+	}
+	return _user;
+}
+
+
 @end

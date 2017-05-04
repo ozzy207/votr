@@ -1,5 +1,4 @@
 PODS:
-  - ASJTagsView (1.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -20,6 +19,12 @@ PODS:
   - Firebase/Database (3.10.0):
     - Firebase/Core
     - FirebaseDatabase (= 3.1.1)
+  - Firebase/DynamicLinks (3.10.0):
+    - Firebase/Core
+    - FirebaseDynamicLinks (= 1.3.2)
+  - Firebase/Invites (3.10.0):
+    - Firebase/Core
+    - FirebaseInvites (= 1.2.3)
   - Firebase/Storage (3.10.0):
     - Firebase/Core
     - FirebaseStorage (= 1.0.5)
@@ -38,7 +43,22 @@ PODS:
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (3.1.1):
     - FirebaseAnalytics (~> 3.5)
+  - FirebaseDynamicLinks (1.3.2):
+    - FirebaseAnalytics (~> 3.6)
   - FirebaseInstanceID (1.0.8)
+  - FirebaseInvites (1.2.3):
+    - FirebaseAnalytics (~> 3.6)
+    - FirebaseDynamicLinks (~> 1.3)
+    - GoogleAPIClientForREST (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSignIn (~> 4.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/StringEncoding (~> 2.1)
+    - GoogleToolboxForMac/URLBuilder (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseStorage (1.0.5):
     - FirebaseAnalytics (~> 3.5)
     - GTMSessionFetcher/Core (~> 1.1)
@@ -67,6 +87,12 @@ PODS:
   - FirebaseUI/Twitter (1.0.0):
     - FirebaseUI/Auth
     - TwitterKit (~> 2.4)
+  - FLAnimatedImage (1.0.12)
+  - GoogleAPIClientForREST (1.1.1):
+    - GoogleAPIClientForREST/Core (= 1.1.1)
+    - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/Core (1.1.1):
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleAppUtilities (1.1.2):
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleInterchangeUtilities (1.2.2):
@@ -77,9 +103,13 @@ PODS:
     - GTMOAuth2 (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - GoogleSymbolUtilities (1.1.2)
+  - GoogleToolboxForMac/Core (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
   - GoogleToolboxForMac/DebugUtils (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - GoogleToolboxForMac/Defines (2.1.0)
+  - GoogleToolboxForMac/Logger (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.0):
@@ -87,6 +117,13 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.0)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
+  - GoogleToolboxForMac/StringEncoding (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GoogleToolboxForMac/URLBuilder (2.1.0):
+    - GoogleToolboxForMac/Core (= 2.1.0)
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (= 2.1.0)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GTMOAuth2 (1.1.4):
     - GTMSessionFetcher (~> 1.1)
   - GTMSessionFetcher (1.1.7):
@@ -94,7 +131,9 @@ PODS:
   - GTMSessionFetcher/Core (1.1.7)
   - GTMSessionFetcher/Full (1.1.7):
     - GTMSessionFetcher/Core (= 1.1.7)
+  - JLRoutes (2.0.1)
   - JVFloatLabeledTextField (1.1.1)
+  - LLSimpleCamera (4.2.0)
   - ProgressHUD (2.4)
   - SCLAlertView-Objective-C (1.0.6)
   - SDWebImage (3.8.2):
@@ -108,21 +147,24 @@ PODS:
   - WSTagsField (2.0.0)
 
 DEPENDENCIES:
-  - ASJTagsView
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/DynamicLinks
+  - Firebase/Invites
   - Firebase/Storage
   - FirebaseUI (~> 1.0)
+  - FLAnimatedImage (~> 1.0)
   - GoogleSignIn
+  - JLRoutes
   - JVFloatLabeledTextField
+  - LLSimpleCamera (~> 4.1)
   - ProgressHUD
   - SCLAlertView-Objective-C
   - TTTAttributedLabel
   - WSTagsField
 
 SPEC CHECKSUMS:
-  ASJTagsView: fc7526f5d76fd2a07a011b232a03a6d2b0a9dad1
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
@@ -132,9 +174,13 @@ SPEC CHECKSUMS:
   FirebaseAuth: 96e9674ff31d6e1f826d53e26aa003a57cab0295
   FirebaseCore: 1e383fdfe37b6b5d6ff88e84204bdee30276af0f
   FirebaseDatabase: 6de92187481ff0e8e124064f21742e95ee883b02
+  FirebaseDynamicLinks: c135f328a320316f0095f24aa599ff832fdebcec
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  FirebaseInvites: 4317eb941658fc601b8504d5d5b5caddba9aa262
   FirebaseStorage: 5738284835edb57f0e81d4ae5832bb17c1e4b5fa
   FirebaseUI: 82bd64fc3fc5a9451c37a720aee813990e727cf1
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  GoogleAPIClientForREST: f272e35f7fe9f80ab232756c798adc32245ece8c
   GoogleAppUtilities: a8a552aa74f6597f805e45b5a3962766c3134973
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSignIn: a8694c0a8e6d1b0ec77c58014de5bfd4ba2fa766
@@ -142,7 +188,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  JLRoutes: 3652abe3b4ac51bc93ec3a371353d762e8566092
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
+  LLSimpleCamera: ed7813ce4827ff3e34c6af159c99b5b56e54d1c6
   ProgressHUD: 4b66b0df0e08519c5c7283a198fd2867a114c95a
   SCLAlertView-Objective-C: ca78280817e66e74366b78579350dee2ff277e23
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
@@ -151,6 +199,6 @@ SPEC CHECKSUMS:
   TwitterKit: d38c08d31dfd4ba604f95deca6cf8e174b5cbd96
   WSTagsField: df3f020590e1c0f26d85293e4ce24c5d4fcc3c80
 
-PODFILE CHECKSUM: f6f1ad1083a281565360f2203fb4e7b9845b3790
+PODFILE CHECKSUM: 483c07a2c15ac2c1d07990e4d4e8ae7cb84a3919
 
 COCOAPODS: 1.1.1

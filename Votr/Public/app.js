@@ -2,10 +2,10 @@
 	  
 	  // Initialize Firebase
 	  const config = {
-		  apiKey: "AIzaSyDaUv2pueITb8Xd-2DJvx8HrSEAYJe4-Jc",
-		  authDomain: "votr-b14fb.firebaseapp.com",
-		  databaseURL: "https://votr-b14fb.firebaseio.com",
-		  storageBucket: "votr-b14fb.appspot.com",
+		  apiKey: "AIzaSyCDFNhQs5azFWESVVjx7rjkg2O34zuzPy0",
+		  authDomain: "votr2-51a84.firebaseio.com",
+		  databaseURL: "https://votr2-51a84.firebaseio.com",
+		  storageBucket: "votr2-51a84.appspot.com",
 	  };
 	  firebase.initializeApp(config);
 	  

@@ -22,7 +22,8 @@
     [[UITabBar appearance] setBarTintColor:[[Branding shareInstance] color:@"A"]];
     [[UITabBar appearance] setTintColor:[[Branding shareInstance]  color:@"E"]];
     
-    
+    [self setNeedsStatusBarAppearanceUpdate];
+	
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[[Branding shareInstance]  color:@"E"], NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
 
     
@@ -43,6 +44,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+	return UIStatusBarStyleLightContent;
+}
 /*
 #pragma mark - Navigation
 

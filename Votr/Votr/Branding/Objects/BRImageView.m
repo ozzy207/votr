@@ -26,6 +26,11 @@
     return self;
 }
 
+- (void)setup
+{
+	self.circle = NO;
+}
+
 #pragma mark - Setters
 - (void)setImageColor:(NSString *)imageColor
 {
@@ -34,4 +39,13 @@
     [self setTintColor:[[Branding shareInstance] color:imageColor]];
 }
 
+- (void)setCircle:(BOOL)circle
+{
+	if (circle) {
+		[self.layer setCornerRadius:self.frame.size.width/2];
+		[self setClipsToBounds:YES];
+	}else{
+		[self.layer setCornerRadius:0];
+	}
+}
 @end

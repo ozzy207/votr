@@ -11,6 +11,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+- (void)navigateModalToPost:(NSString*)postID;
 @end
 

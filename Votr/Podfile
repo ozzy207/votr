@@ -7,15 +7,19 @@ target 'Votr' do
 
   # Pods for Votr
   pod 'ProgressHUD'
-  pod 'ASJTagsView'
   pod 'SCLAlertView-Objective-C'
   pod 'TTTAttributedLabel'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'Firebase/Invites'
+  pod 'Firebase/DynamicLinks'
   pod 'GoogleSignIn'
   pod 'Firebase/Database'
   pod 'FirebaseUI', '~> 1.0'
   pod 'JVFloatLabeledTextField'
   pod 'WSTagsField'
+  pod 'FLAnimatedImage', '~> 1.0'
+  pod 'LLSimpleCamera', '~> 4.1'
+  pod 'JLRoutes'
 end

@@ -26,28 +26,6 @@
     return self;
 }
 
-- (void)layoutSubviews
-{
-	[super layoutSubviews];
-	if (self.outline) {
-		self.layer.borderWidth = 1;
-		self.layer.borderColor = [[Branding shareInstance] color:self.colorCode].CGColor;
-		self.backgroundColor = [UIColor clearColor];
-		[self.titleLabel setNumberOfLines:0];
-		[self.titleLabel setLineBreakMode:NSLineBreakByCharWrapping];
-	}else{
-		self.layer.borderWidth = 0;
-		self.layer.borderColor = [UIColor clearColor].CGColor;
-		[self setBackgroundColor:[[Branding shareInstance] color:self.colorCode]];
-		[self.titleLabel setNumberOfLines:1];
-		[self.titleLabel setLineBreakMode:NSLineBreakByTruncatingTail];
-	}
-	
-	//[self setTitleColor:[[Branding shareInstance] color:self.textColorCode] forState:UIControlStateNormal & UIControlStateHighlighted & UIControlStateSelected];
-	[self.titleLabel setFont:[[Branding shareInstance] font:self.sizeCode weight:self.weightCode]];
-	
-}
-
 - (void)setup
 {
     [self.layer setCornerRadius:4];
@@ -61,16 +39,51 @@
     self.alpha = enabled ? 1.0:0.4;
 }
 
-//-(CGSize)intrinsicContentSize
-//{
-//    return CGSizeMake(self.frame.size.width, self.titleLabel.frame.size.height);
-//}
+- (void)setOutline:(BOOL)outline
+{
+	_outline = outline;
+	if (self.outline) {
+		self.layer.borderWidth = 1;
+		self.layer.borderColor = [[Branding shareInstance] color:self.colorCode].CGColor;
+		self.backgroundColor = [UIColor clearColor];
+		[self.titleLabel setNumberOfLines:0];
+		[self.titleLabel setLineBreakMode:NSLineBreakByCharWrapping];
+	}else{
+		self.layer.borderWidth = 0;
+		self.layer.borderColor = [UIColor clearColor].CGColor;
+		[self setBackgroundColor:[[Branding shareInstance] color:self.colorCode]];
+		[self.titleLabel setNumberOfLines:1];
+		[self.titleLabel setLineBreakMode:NSLineBreakByTruncatingTail];
+	}
+}
+
+- (void)setSizeCode:(NSInteger)sizeCode
+{
+	_sizeCode = sizeCode;
+		[self.titleLabel setFont:[[Branding shareInstance] font:_sizeCode weight:self.weightCode]];
+}
+
+- (void)setWeightCode:(NSInteger)weightCode
+{
+	_weightCode = weightCode;
+	[self.titleLabel setFont:[[Branding shareInstance] font:self.sizeCode weight:_weightCode]];
+}
 
 - (void)setTextColorCode:(NSString *)textColorCode
 {
 	_textColorCode = textColorCode;
-	[self setTitleColor:[[Branding shareInstance] color:textColorCode] forState:UIControlStateNormal & UIControlStateHighlighted & UIControlStateSelected];
-	
+	[self setTitleColor:[[Branding shareInstance] color:_textColorCode] forState:UIControlStateNormal & UIControlStateHighlighted & UIControlStateSelected];
 }
+//-(CGSize)intrinsicContentSize
+//{
+//    return CGSizeMake(self.frame.size.width, self.titleLabel.frame.size.height);
+//}
+//
+//- (void)setTextColorCode:(NSString *)textColorCode
+//{
+//	_textColorCode = textColorCode;
+//	[self setTitleColor:[[Branding shareInstance] color:textColorCode] forState:UIControlStateNormal & UIControlStateHighlighted & UIControlStateSelected];
+//	
+//}
 
 @end

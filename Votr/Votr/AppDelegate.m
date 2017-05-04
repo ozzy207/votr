@@ -11,6 +11,9 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "DataManager.h"
+#import "DataManager+DeepLink.h"
+#import "JLRoutes.h"
+#import "BaseVoteViewController.h"
 
 @import GoogleSignIn;
 @import Firebase;
@@ -24,7 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [FIRApp configure];
+
 	
 	[GIDSignIn sharedInstance].clientID = [FIRApp defaultApp].options.clientID;
 	
@@ -32,6 +35,11 @@
 	
 	[[Branding shareInstance] intitialize];
 	
+	[FIROptions defaultOptions].deepLinkURLScheme = URLSCHEME;
+	
+	[FIRApp configure];
+	
+	//[[FIRAuth auth] signOut:nil];
 	if ([FIRAuth auth].currentUser) {// User is signed in.
 
 	} else { // No user is signed in.
@@ -43,7 +51,29 @@
 		[self.window makeKeyAndVisible];
 	}
 	
-	[DataManager sharedInstance];
+	[[DataManager sharedInstance] initialize];
+	
+	
+	[[JLRoutes globalRoutes] addRoute:@":domain" handler:^BOOL(NSDictionary *parameters) {
+		NSString *postID = parameters[@"postID"];
+		if ([FIRAuth auth].currentUser) {
+			[[DataManager sharedInstance] deepLinkPost:postID toUser:[FIRAuth auth].currentUser.uid completion:^(NSError *error) {
+				NSLog(@"linked");
+				//Navigate to Post
+				if (!error){
+					[self navigateModalToPost:postID];
+				}
+			}];
+			
+		}else{
+			//If new user
+			//Save postID and repeat above post login
+			[[DataManager sharedInstance] savePostID:postID];
+		}
+
+		return YES; // return YES to say we have handled the route
+	}];
+	// ..
 	
     return YES;
 }
@@ -97,6 +127,24 @@
 									  sourceApplication:sourceApplication
 											 annotation:annotation];
 	}
+	
+//	FIRReceivedInvite *invite =
+//	[FIRInvites handleURL:url sourceApplication:sourceApplication annotation:annotation];
+//	if (invite) {
+//		NSString *matchType =
+//		(invite.matchType == FIRReceivedInviteMatchTypeWeak) ? @"Weak" : @"Strong";
+//		NSString *message =
+//		[NSString stringWithFormat:@"Deep link from %@ \nInvite ID: %@\nApp URL: %@\nMatch Type:%@",
+//		 sourceApplication, invite.inviteId, invite.deepLink, matchType];
+//		NSLog(@"%@",message);
+////		[[[UIAlertView alloc] initWithTitle:@"Deep-link Data"
+////									message:message
+////								   delegate:nil
+////						  cancelButtonTitle:@"OK"
+////						  otherButtonTitles:nil] show];
+//		
+//		return YES;
+//	}
 	// Add any custom logic here.
 	return handled;
 }
@@ -114,45 +162,53 @@
 									  sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
 											 annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
 	}
+	
+	if (!handled) {
+		FIRDynamicLink *dynamicLink =
+		[[FIRDynamicLinks dynamicLinks] dynamicLinkFromCustomSchemeURL:url];
+		
+		if (dynamicLink) {
+			NSString *link = dynamicLink.url;
+			BOOL strongMatch = dynamicLink.matchConfidence == FIRDynamicLinkMatchConfidenceStrong;
+			// ...
+			// Handle the deep link. For example, show the deep-linked content or
+			// apply a promotional offer to the user's account.
+			// ...
+			[JLRoutes routeURL:dynamicLink.url];
+			return YES;
+		}
+	}
+
+
 	return handled;
 }
 
-//- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error
-//{
-//	if (error == nil) {
-//		GIDAuthentication *authentication = user.authentication;
-//		FIRAuthCredential *credential =
-//		[FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken
-//										 accessToken:authentication.accessToken];
-//		// ...
-//		[[FIRAuth auth] signInWithCredential:credential
-//								  completion:^(FIRUser *user, NSError *error) {
-//									  // ...
-//									  if (error) {
-//										  // ...
-//										  return;
-//									  }else{
-//										  [self navigateToStoryboard:@"Main"];
-//									  }
-//								  }];
-//	} else{
-//		// ...
-//	}
-//}
-//
-//- (void)signIn:(GIDSignIn *)signIn
-//didDisconnectWithUser:(GIDGoogleUser *)user
-//	 withError:(NSError *)error {
-//	// Perform any operations when the user disconnects from app here.
-//	// ...
-//}
-//
-//- (void)navigateToStoryboard:(NSString*)storyboardName
-//{
-//	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
-//	UIViewController *controller = [storyboard instantiateInitialViewController];
-//	self.window.rootViewController = controller;
-//	[self.window makeKeyAndVisible];
-//}
+- (BOOL)application:(UIApplication *)application
+continueUserActivity:(NSUserActivity *)userActivity
+ restorationHandler:(void (^)(NSArray *))restorationHandler {
+	
+	BOOL handled = [[FIRDynamicLinks dynamicLinks]
+					handleUniversalLink:userActivity.webpageURL
+					completion:^(FIRDynamicLink * _Nullable dynamicLink,
+								 NSError * _Nullable error) {
+						// ...
+						NSString *link = dynamicLink.url;
+						BOOL strongMatch = dynamicLink.matchConfidence == FIRDynamicLinkMatchConfidenceStrong;
+						[JLRoutes routeURL:dynamicLink.url];
+						// ...
+					}];
+	
+	
+	return handled;
+}
+
+- (void)navigateModalToPost:(NSString*)postID
+{
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Poll" bundle:nil];
+	BaseVoteViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"Vote"];
+	[controller setPostID:postID];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+	[self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+}
 
 @end

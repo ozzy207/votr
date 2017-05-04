@@ -33,12 +33,22 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.596071362963-108thlupfv9jtt9sbnil0uuvdus7nttp</string>
+				<string>com.googleusercontent.apps.501934744776-dcpusdu0ki608b2utrq2he43fvdhf3d6</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>invite</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.votr.invite</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>FacebookAppID</key>
 	<string>403421153334516</string>
 	<key>FacebookDisplayName</key>
@@ -48,7 +58,7 @@
 		<string>fbauth2</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<false/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -72,9 +82,13 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>YES</string>
+	<string>Used and shared for polls</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Votr wants to use your information to help you share this app with your friends.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used and shared for polls</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>YES</string>
+	<string>Used and shared for polls</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -44,9 +44,18 @@
 	return [dateFormat dateFromString:dateString];
 }
 
-- (NSDictionary*)dictionaryRepresentation
+- (NSMutableDictionary*)dictionaryRepresentation
 {
-	return [NSDictionary new];
+	NSMutableDictionary *mDictionary = [NSMutableDictionary new];
+	
+	if (self.title){
+		[mDictionary setObject:self.title forKey:@"title"];
+	}
+	
+	if (self.key){
+		[mDictionary setObject:self.key forKey:@"key"];
+	}
+	return mDictionary;
 }
 
 @end

@@ -9,4 +9,5 @@
 
 @interface BRImageView : UIImageView
 @property (strong, nonatomic) IBInspectable NSString *imageColor;
+@property (nonatomic) IBInspectable BOOL circle;
 @end

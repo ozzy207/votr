@@ -9,6 +9,9 @@
 #import "AuthTopicViewController.h"
 #import "DataManager+Topics.h"
 #import "BRSelectionImageView.h"
+#import "DataManager+User.h"
+#import "DataManager+DeepLink.h"
+#import "AppDelegate.h"
 
 @import Firebase;
 @import FirebaseStorageUI;
@@ -29,9 +32,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	if (self.editUser) {
+		UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(next:)];
+		[self.navigationItem setRightBarButtonItem:item1];
+		
+		UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss:)];
+		[self.navigationItem setLeftBarButtonItem:item2];
+	}
+	
 	[[DataManager sharedInstance] allTopics:^(NSArray *topics) {
 		self.data = [topics mutableCopy];
 		[self.collectionView reloadData];
+		
+		if (self.editUser) {
+			//NSMutableArray *marray = [NSMutableArray new];
+			NSInteger counter = 0;
+			for (VTRTopic *topic in self.data) {
+				if ([[DataManager sharedInstance] user].topics[topic.key]) {
+					//[marray addObject:[NSIndexPath indexPathForRow:[self.data indexOfObject:topic] inSection:0]];
+					[self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:counter inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+				}
+				counter++;
+			}
+//			for (NSString *topic in [[DataManager sharedInstance] user].topics) {
+//				if ([self.data containsObject:topic]) {
+//					//[marray addObject:[NSIndexPath indexPathForRow:[self.data indexOfObject:topic] inSection:0]];
+//					[self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:[self.data indexOfObject:topic] inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+//				}
+//			}
+			
+			
+		}
+
 	}];
 	[self.collectionView setAllowsMultipleSelection:YES];
 	[self.collectionView setAllowsSelection:YES];
@@ -62,18 +95,36 @@
 - (IBAction)next:(id)sender
 {
 	//[self navigateToStoryboard:@"Main"];
-	FIRUser *user = [FIRAuth auth].currentUser;
+	//FIRUser *user = [FIRAuth auth].currentUser;
 	NSArray *selectedArray = self.collectionView.indexPathsForSelectedItems;
 	selectedArray = [selectedArray valueForKeyPath:@"row"];
-	NSIndexSet *indexSet = [selectedArray indexesOfObjectsPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-		return [obj isKindOfClass:[NSNumber class]];
-	}];
-	selectedArray = [self.data objectsAtIndexes:indexSet];
-	NSArray *keys = [selectedArray valueForKey:@"key"];
+//	NSIndexSet *indexSet = [selectedArray indexesOfObjectsPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//		return [obj isKindOfClass:[NSNumber class]];
+//	}];
+	//selectedArray = [self.data objectsAtIndexes:indexSet];
+	//NSArray *keys = [selectedArray valueForKey:@"key"];
+	NSMutableDictionary *dict = [NSMutableDictionary new];
+	for (NSNumber *numb in selectedArray) {
+		[dict setValue:@YES forKey:[self.data[[numb integerValue]] key]];
+	}
 	
-	[[DataManager sharedInstance] saveUserTopics:user topics:keys onCompletion:^(NSError *error, FIRDatabaseReference *ref) {
-		[self navigateToStoryboard:@"Main"];
+	VTRUser *user = [DataManager sharedInstance].user;
+	user.topics = dict;
+	[[[[[[DataManager sharedInstance] refDatabase]child:@"users"] child:user.key] child:@"topics"] setValue:dict withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+		if (self.editUser) {
+			[self dismiss:self];
+		}else{
+			[self navigateToStoryboard:@"Main"];
+			NSString *postID = [[DataManager sharedInstance] getPostID];
+			if ([[DataManager sharedInstance] getPostID]) {
+				[[DataManager sharedInstance] clearPostID];
+				AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+				[delegate navigateModalToPost:postID];
+			}
+		}
 	}];
+
+
 //	[[[[[DataManager sharedInstance] refDatabase] child:@"users"] child:user.uid]
 //	 setValue:@{@"topics": keys}];
 	
@@ -136,8 +187,6 @@
 	FIRStorageReference *refImage = [refTopics child:[NSString stringWithFormat:@"%@.jpg",topic.key]];
 	// Placeholder image
 	UIImage *placeholderImage;
-	
-	// Load the image using SDWebImage
 	[cell.detailImageView sd_setImageWithStorageReference:refImage placeholderImage:placeholderImage];
 	[cell.titleLabel setText:topic.title];
 	NSArray *selectedIndexPaths = [collectionView indexPathsForSelectedItems];

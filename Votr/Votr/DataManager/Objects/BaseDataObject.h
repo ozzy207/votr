@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface BaseDataObject : NSObject
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *key;
 + (instancetype)instanceFromDictionary:(NSDictionary*)dictionary;
 
 - (NSString*)stringFromDate:(NSDate*)date;
 - (NSDate*)dateFromString:(NSString*)dateString;
-- (NSDictionary*)dictionaryRepresentation;
+- (NSMutableDictionary*)dictionaryRepresentation;
 @end

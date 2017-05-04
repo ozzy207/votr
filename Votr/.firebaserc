@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "votr-b14fb"
+    "default": "votr-b14fb",
+    "test": "votr2-51a84"
   }
 }
