@@ -51,7 +51,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	if (self.post) {
+	if (self.post && self.handles.count == 0) {
 		[self setupObservers];
 	}
 
@@ -247,7 +247,7 @@
 	
 	//Votes
 	FIRDatabaseReference *ref2 = [[[[[DataManager sharedInstance]refDatabase]child:@"posts"] child:self.post.key] child:@"votes"];
-	FIRDatabaseHandle handle4 = [ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+	FIRDatabaseHandle handle4 = [ref2 observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
 		NSMutableDictionary *temp = [NSMutableDictionary new];
 		if ([snapshot.value isKindOfClass:[NSDictionary class]]) {
 			for (NSString *key in [snapshot.value allKeys]) {

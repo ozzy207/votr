@@ -120,8 +120,9 @@
 		} else {
 			[postsVoted setValue:@YES forKey:postKey];
 			
-			VTRVote *vote = [VTRVote instanceFromDictionary:@{@"selectedIndex":@(blkSelectedIndex)}];
-			[votes setValue:vote forKey:uid];
+			//VTRVote *vote = [VTRVote instanceFromDictionary:@{@"selectedIndex":@(blkSelectedIndex)}];
+			//[votes setValue:vote.selectedIndex forKey:uid];
+			[votes setValue:@(blkSelectedIndex) forKey:uid];
 		}
 		
 		weakSelf.user.postsVoted = postsVoted;

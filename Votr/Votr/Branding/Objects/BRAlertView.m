@@ -36,6 +36,28 @@
 	return alert;
 }
 
++ (instancetype)brandedInstanceWhiteBG
+{
+	BRAlertView *alert = [[BRAlertView alloc] init];
+	[alert.labelTitle setTextColor:[[Branding shareInstance] color:@"B"]];
+	[alert.viewText setTextColor:[[Branding shareInstance] color:@"B"]];
+	alert.showAnimationType =  SCLAlertViewShowAnimationFadeIn;
+	
+	//Set background type (Default is SCLAlertViewBackgroundShadow)
+	alert.backgroundType = SCLAlertViewBackgroundBlur;
+	
+	//Overwrite SCLAlertView (Buttons, top circle and borders) colors
+	alert.customViewColor = [[Branding shareInstance] color:@"G"];
+	
+	//Set custom tint color for icon image.
+	alert.iconTintColor = [[Branding shareInstance] color:@"K"];
+	
+	//Overwrite SCLAlertView background color
+	alert.backgroundViewColor = [[Branding shareInstance] color:@"K"];
+	return alert;
+}
+
+
 #pragma mark - Life Cycle
 - (void)viewDidLoad
 {

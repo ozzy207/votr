@@ -9,4 +9,5 @@
 #import "SCLAlertView.h"
 @interface BRAlertView : SCLAlertView
 +(instancetype)brandedInstance;
++ (instancetype)brandedInstanceWhiteBG;
 @end

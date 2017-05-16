@@ -105,8 +105,8 @@
                   symbolName = "__44-[AuthLandingViewController facebookSignin:]_block_invoke"
                   moduleName = "Votr"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/edwardkim/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/Auth/AuthLandingViewController.m"
-                  timestampString = "514826859.666276"
+                  urlString = "file:///Users/edwardkim/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/Auth/AuthLandingViewController.m"
+                  timestampString = "516670587.290758"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
@@ -120,8 +120,8 @@
                   symbolName = "__44-[AuthLandingViewController facebookSignin:]_block_invoke"
                   moduleName = "Votr"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/edwardkim/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/Auth/AuthLandingViewController.m"
-                  timestampString = "514826859.667498"
+                  urlString = "file:///Users/edwardkim/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/Auth/AuthLandingViewController.m"
+                  timestampString = "516670587.292208"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
@@ -145,16 +145,6 @@
             endingLineNumber = "169"
             landmarkName = "-facebookSignin:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -291,8 +281,8 @@
                   symbolName = "__33-[UserViewController followUser:]_block_invoke"
                   moduleName = "Votr"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/edwardkim/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/User/UserViewController.m"
-                  timestampString = "514826859.693973"
+                  urlString = "file:///Users/edwardkim/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/User/UserViewController.m"
+                  timestampString = "516670587.312545"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "167"
@@ -306,8 +296,8 @@
                   symbolName = "__copy_helper_block_.264"
                   moduleName = "Votr"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/edwardkim/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/User/UserViewController.m"
-                  timestampString = "514826859.695702"
+                  urlString = "file:///Users/edwardkim/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/User/UserViewController.m"
+                  timestampString = "516670587.313779"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "167"
@@ -321,8 +311,8 @@
                   symbolName = "__destroy_helper_block_.265"
                   moduleName = "Votr"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/edwardkim/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/User/UserViewController.m"
-                  timestampString = "514826859.697582"
+                  urlString = "file:///Users/edwardkim/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/Repositories/IntBitTech/votr/Votr/Votr/ViewControllers/User/UserViewController.m"
+                  timestampString = "516670587.315075"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "167"
@@ -371,11 +361,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/ViewControllers/Polls/CreatePollViewController.m"
-            timestampString = "510759874.597448"
+            timestampString = "516655775.483793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "-savePoll:"
             landmarkType = "7">
          </BreakpointContent>
@@ -387,11 +377,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/ViewControllers/Polls/CreatePollViewController.m"
-            timestampString = "510759874.597448"
+            timestampString = "516655775.483793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "-savePoll:"
             landmarkType = "7">
          </BreakpointContent>
@@ -403,11 +393,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/ViewControllers/Polls/CreatePollViewController.m"
-            timestampString = "510759874.597448"
+            timestampString = "516655775.483793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
             landmarkName = "-savePoll:"
             landmarkType = "7">
          </BreakpointContent>
@@ -547,7 +537,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "510610117.698178"
+            timestampString = "516670502.127221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "214"
@@ -563,7 +553,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "510610119.865982"
+            timestampString = "516670502.127221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "225"
@@ -579,7 +569,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "510610121.852183"
+            timestampString = "516670502.127221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
@@ -776,7 +766,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
             endingLineNumber = "125"
-            landmarkName = "-inviteToPost:"
+            landmarkName = "-inviteToPost:save:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -787,7 +777,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "514761874.896968"
+            timestampString = "516670502.127221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "381"
@@ -803,7 +793,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "514761874.896968"
+            timestampString = "516670502.127221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "384"
@@ -819,7 +809,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "514761874.896968"
+            timestampString = "516670502.127221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "390"
@@ -835,12 +825,166 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "514761874.896968"
+            timestampString = "516670502.127221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "397"
             endingLineNumber = "397"
             landmarkName = "-vote:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/DataManager/Objects/VTRPost.m"
+            timestampString = "516650778.599505"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-dictionaryRepresentation"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/DataManager/Categories/DataManager+Posts.m"
+            timestampString = "516650880.326898"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-votePostKey:postItemIndex:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/ViewControllers/Polls/CreatePollViewController.m"
+            timestampString = "516655570.402648"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/ViewControllers/Polls/CreatePollViewController.m"
+            timestampString = "516655572.166563"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
+            timestampString = "516670502.127221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "451"
+            endingLineNumber = "451"
+            landmarkName = "-submitComment:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/DataManager/Objects/VTRComment.m"
+            timestampString = "516669677.660758"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "-dictionaryRepresentation"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
+            timestampString = "516670502.127221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
+            landmarkName = "-submitComment:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
+            timestampString = "516670502.127221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "-setupObservers"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
+            timestampString = "516670536.802229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "-setupObservers"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

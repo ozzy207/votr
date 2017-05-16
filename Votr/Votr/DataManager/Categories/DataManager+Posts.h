@@ -11,12 +11,12 @@
 #import "VTRPostItem.h"
 
 @interface DataManager (Posts)
-- (FIRDatabaseReference*)newPostReference;
-- (FIRDatabaseReference*)newPostItemReference;
+- (FIRDatabaseReference*_Nullable)newPostReference;
+- (FIRDatabaseReference*_Nullable)newPostItemReference;
 
-- (FIRDatabaseReference*)pushPost:(VTRPost*)post reference:(FIRDatabaseReference*)databaseRef completion:(void(^)(NSError *  error, FIRDatabaseReference * ref))_onCompletion;
-- (FIRDatabaseReference*)pushPostItem:(VTRPostItem*)postItem reference:(FIRDatabaseReference*)databaseRef completion:(void(^)(NSError * error, FIRDatabaseReference * ref))_onCompletion;
-- (void)searchPostTitle:(NSString*)title completion:(void(^)(NSArray * posts))_onCompletion;
-- (void)votePostKey:(NSString*)postKey postItemIndex:(NSInteger)selectedIndex completion:(void(^)(FIRDataSnapshot * _Nullable snapshot))_onCompletion;
-- (void)deletePost:(VTRPost*)post completion:(void(^)(NSError * error,FIRDatabaseReference * ref))_onCompletion;
+- (FIRDatabaseReference*_Nullable)pushPost:(VTRPost* _Nullable )post reference:(FIRDatabaseReference* _Nullable )databaseRef completion:(void(^_Nullable)(NSError * _Nullable  error, FIRDatabaseReference * _Nullable ref))_onCompletion;
+- (FIRDatabaseReference* _Nullable )pushPostItem:(VTRPostItem* _Nullable )postItem reference:(FIRDatabaseReference* _Nullable )databaseRef completion:(void(^ _Nullable )(NSError * _Nullable error, FIRDatabaseReference * _Nullable  ref))_onCompletion;
+- (void)searchPostTitle:(NSString* _Nullable )title completion:(void(^ _Nullable )(NSArray * _Nullable  posts))_onCompletion;
+- (void)votePostKey:(NSString* _Nullable )postKey postItemIndex:(NSInteger)selectedIndex completion:(void(^_Nullable)(FIRDataSnapshot * _Nullable snapshot))_onCompletion;
+- (void)deletePost:(VTRPost*_Nonnull)post completion:(void(^_Nullable)(NSError * _Nullable error,FIRDatabaseReference * _Nullable ref))_onCompletion;
 @end

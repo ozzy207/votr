@@ -99,6 +99,15 @@
 		[[NSNotificationCenter defaultCenter] postNotificationName:UITextViewTextDidBeginEditingNotification object:nil];
 	};
 	
+	self.tagsField.onDidChangeText = ^(WSTagsField * _Nonnull field, NSString * _Nullable text) {
+		if (text.length > 0){
+			if([text characterAtIndex:0] != '_'){
+				text = [NSString stringWithFormat:@"_%@",text];
+				UITextField *textField = [field.subviews firstObject];
+				[textField setText:text];
+			}
+		}
+	};
 
 	[self.scrollView setDelegate:self];
 
@@ -315,7 +324,7 @@
 		}
 		//Clear post
 		//[weakSelf clearPost];
-		BRAlertView *alert = [BRAlertView brandedInstance];
+		BRAlertView *alert = [BRAlertView brandedInstanceWhiteBG];
 		if (weakSelf.segmentedControl.selectedSegmentIndex == 1) {
 			[alert addButton:@"Invite" validationBlock:^(void){
 				return YES;
