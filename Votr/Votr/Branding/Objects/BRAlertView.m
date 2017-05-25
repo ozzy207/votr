@@ -42,7 +42,6 @@
 	[alert.labelTitle setTextColor:[[Branding shareInstance] color:@"B"]];
 	[alert.viewText setTextColor:[[Branding shareInstance] color:@"B"]];
 	alert.showAnimationType =  SCLAlertViewShowAnimationFadeIn;
-	
 	//Set background type (Default is SCLAlertViewBackgroundShadow)
 	alert.backgroundType = SCLAlertViewBackgroundBlur;
 	

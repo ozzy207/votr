@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hfl-J6-fMj">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hfl-J6-fMj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,7 +65,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="style">
                                                         <integer key="value" value="1"/>
@@ -135,7 +135,7 @@
                                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="style">
                                                                         <integer key="value" value="1"/>
@@ -164,7 +164,7 @@
                                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="style">
                                                                         <integer key="value" value="1"/>
@@ -384,7 +384,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="240" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-MU-ycH">
                                                     <rect key="frame" x="0.0" y="80" width="375" height="300"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="vyV-Ir-DzN">
+                                                        <view contentMode="scaleToFill" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="vyV-Ir-DzN" customClass="UIControl">
                                                             <rect key="frame" x="0.0" y="0.0" width="186.5" height="300"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="JF5-dl-U3y" customClass="FLAnimatedImageView">
@@ -424,7 +424,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" verticalHuggingPriority="247" translatesAutoresizingMaskIntoConstraints="NO" id="DQ5-G5-n1c" customClass="BRVoteProgressView">
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="247" translatesAutoresizingMaskIntoConstraints="NO" id="DQ5-G5-n1c" customClass="BRVoteProgressView">
                                                                     <rect key="frame" x="18" y="45.5" width="150.5" height="236.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7qn-Om-mxO" customClass="BRLabel">
@@ -479,8 +479,11 @@
                                                                 <constraint firstItem="JF5-dl-U3y" firstAttribute="trailing" secondItem="8GF-83-Aye" secondAttribute="trailing" id="rDo-AG-dt2"/>
                                                                 <constraint firstItem="8GF-83-Aye" firstAttribute="top" secondItem="vyV-Ir-DzN" secondAttribute="top" id="rIV-pV-Rqo"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <action selector="vote:" destination="2Sb-fb-5kK" eventType="touchUpInside" id="bd9-7G-rcd"/>
+                                                            </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="pWB-c7-caB">
+                                                        <view tag="1" contentMode="scaleToFill" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="pWB-c7-caB" customClass="UIControl">
                                                             <rect key="frame" x="188.5" y="0.0" width="186.5" height="300"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="245" translatesAutoresizingMaskIntoConstraints="NO" id="KSg-5l-Ep4" customClass="FLAnimatedImageView">
@@ -520,7 +523,7 @@
                                                                         <userDefinedRuntimeAttribute type="string" keyPath="colorCode" value="L"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" verticalHuggingPriority="244" translatesAutoresizingMaskIntoConstraints="NO" id="xOU-fC-zxi" customClass="BRVoteProgressView">
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="244" translatesAutoresizingMaskIntoConstraints="NO" id="xOU-fC-zxi" customClass="BRVoteProgressView">
                                                                     <rect key="frame" x="18" y="45.5" width="151" height="236.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="244" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="R40-oL-f4A" customClass="BRLabel">
@@ -574,6 +577,9 @@
                                                                 <constraint firstItem="xOU-fC-zxi" firstAttribute="top" secondItem="65x-vE-zXu" secondAttribute="bottom" constant="10" id="wOb-gf-8v6"/>
                                                                 <constraint firstAttribute="trailing" secondItem="65x-vE-zXu" secondAttribute="trailing" id="zP4-E5-vNd"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <action selector="vote:" destination="2Sb-fb-5kK" eventType="touchUpInside" id="vuK-Hw-e6c"/>
+                                                            </connections>
                                                         </view>
                                                     </subviews>
                                                 </stackView>
@@ -798,6 +804,7 @@
                         <outlet property="detailLabel1" destination="ZZI-3S-zZp" id="sj8-PD-jOT"/>
                         <outlet property="detailLabel2" destination="O1W-YJ-Nln" id="EMd-ly-F8s"/>
                         <outlet property="detailLabel3" destination="aeU-fm-9nE" id="TbL-Rr-hn1"/>
+                        <outlet property="imageStack" destination="MUe-MU-ycH" id="X5e-jZ-fkf"/>
                         <outlet property="progressView1" destination="DQ5-G5-n1c" id="Q5i-hM-fbc"/>
                         <outlet property="progressView2" destination="xOU-fC-zxi" id="iQa-kF-SUs"/>
                         <outlet property="tableView" destination="tb4-BY-uel" id="de7-wO-8g8"/>

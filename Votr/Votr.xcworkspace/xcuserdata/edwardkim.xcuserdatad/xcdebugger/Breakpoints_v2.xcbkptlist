@@ -537,11 +537,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
+            timestampString = "517373182.831436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "-setupObservers"
             landmarkType = "7">
          </BreakpointContent>
@@ -553,11 +553,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
+            timestampString = "517373182.831436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "-setupObservers"
             landmarkType = "7">
          </BreakpointContent>
@@ -569,11 +569,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
+            timestampString = "517373182.831436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "-setupObservers"
             landmarkType = "7">
          </BreakpointContent>
@@ -777,11 +777,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
+            timestampString = "517373182.831436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
             landmarkName = "-vote:"
             landmarkType = "7">
          </BreakpointContent>
@@ -793,11 +793,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
+            timestampString = "517373182.831436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "384"
-            endingLineNumber = "384"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
             landmarkName = "-vote:"
             landmarkType = "7">
          </BreakpointContent>
@@ -809,27 +809,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
+            timestampString = "517373298.972814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
-            landmarkName = "-vote:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
             landmarkName = "-vote:"
             landmarkType = "7">
          </BreakpointContent>
@@ -905,11 +889,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
+            timestampString = "517373298.972814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
             landmarkName = "-submitComment:"
             landmarkType = "7">
          </BreakpointContent>
@@ -947,11 +931,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
+            timestampString = "517373298.972814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "453"
-            endingLineNumber = "453"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
             landmarkName = "-submitComment:"
             landmarkType = "7">
          </BreakpointContent>
@@ -963,11 +947,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670502.127221"
+            timestampString = "517373182.831436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "-setupObservers"
             landmarkType = "7">
          </BreakpointContent>
@@ -979,11 +963,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Votr/BaseViewControllers/BaseVoteViewController.m"
-            timestampString = "516670536.802229"
+            timestampString = "517373182.831436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "-setupObservers"
             landmarkType = "7">
          </BreakpointContent>

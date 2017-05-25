@@ -100,7 +100,7 @@ GIDSignInUIDelegate>
 	UITextField *textField1 = [alert addTextField:@"Enter Email"];
 	UITextField *textField2 = [alert addTextField:@"Enter Password"];
 	UITextField *textField3 = [alert addTextField:@"Confirm Password"];
-	UITextField *textField4 = [alert addTextField:@"User Name"];
+	UITextField *textField4 = [alert addTextField:@"Username"];
 	[textField2 setSecureTextEntry:YES];
 	[textField3 setSecureTextEntry:YES];
 	__weak typeof(BRAlertView*)weakAlert = alert;

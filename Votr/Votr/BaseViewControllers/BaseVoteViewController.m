@@ -35,6 +35,7 @@
 @property (strong, nonatomic) BRFloatTextView *floatView;
 @property (strong, nonatomic) IBOutlet BRVoteProgressView *progressView1;
 @property (strong, nonatomic) IBOutlet BRVoteProgressView *progressView2;
+@property (strong, nonatomic) IBOutlet UIStackView *imageStack;
 @property (strong, nonatomic) BaseTableViewCell *headerCell;
 @end
 
@@ -97,11 +98,13 @@
 	
 	if ([self.post.owner isEqualToString:[DataManager sharedInstance].user.key]){
 		[self.voteStack setHidden:YES];
+		[self.imageStack setUserInteractionEnabled:NO];
 		//[self.commentButtonView setHidden:NO];
 	}else{
 		[self.navigationItem setRightBarButtonItem:nil];
 		if ([[[DataManager sharedInstance] user] postsVoted][self.post.key]) {
 			[self.voteStack setHidden:YES];
+			[self.imageStack setUserInteractionEnabled:NO];
 		}
 	}
 	
@@ -375,11 +378,12 @@
 
 - (IBAction)vote:(UIButton*)sender
 {
+	UIButton *btn = (UIButton*)sender;
 	[self.button1 setEnabled:NO];
 	[self.button2 setEnabled:NO];
-	
+	[self.imageStack setUserInteractionEnabled:NO];
 	__weak typeof (self) weakSelf = self;
-	[[DataManager sharedInstance] votePostKey:self.post.key postItemIndex:sender.tag completion:^(FIRDataSnapshot * _Nullable snapshot) {
+	[[DataManager sharedInstance] votePostKey:self.post.key postItemIndex:btn.tag completion:^(FIRDataSnapshot * _Nullable snapshot) {
 		NSDictionary *dict = snapshot.value;
 		VTRPost *post = [VTRPost instanceFromDictionary:dict];
 		weakSelf.post = post;
@@ -387,14 +391,17 @@
 		[weakSelf.progressView1 setHidden:NO];
 		[weakSelf.progressView2 setHidden:NO];
 		if([[[DataManager sharedInstance] user] postsVoted] [post.key]){
-			[sender setEnabled:YES];
-			[sender setTitle:@"Unvote" forState:UIControlStateNormal];
+			[btn setEnabled:YES];
+			if([sender isKindOfClass:[UIButton class]]){
+				[btn setTitle:@"Unvote" forState:UIControlStateNormal];
+			}
 			[weakSelf.voteStack setHidden:YES];
 			[weakSelf sizeHeaderToFit];
 			
 		}else{
 			[weakSelf.button1 setEnabled:YES];
 			[weakSelf.button2 setEnabled:YES];
+			[self.imageStack setUserInteractionEnabled:YES];
 			[weakSelf.commentButtonView setHidden:YES];
 			[weakSelf.button1 setTitle:@"Choose" forState:UIControlStateNormal];
 			[weakSelf.button2 setTitle:@"Choose" forState:UIControlStateNormal];
