@@ -135,7 +135,7 @@ open class WSTagsField: UIView {
     internal var tagViews = [WSTagView]()
     fileprivate var intrinsicContentHeight: CGFloat = 0.0
 
-	open func stringArray() -> [String]{
+	@objc open func stringArray() -> [String]{
 		return self.tags.map{$0.text}
 	}
 
@@ -151,7 +151,7 @@ open class WSTagsField: UIView {
     open var onShouldReturn: ((WSTagsField) -> Bool)?
 
     /// Called when the text field text has changed. You should update your autocompleting UI based on the text supplied.
-    open var onDidChangeText: ((WSTagsField, _ text: String?) -> Void)?
+    @objc open var onDidChangeText: ((WSTagsField, _ text: String?) -> Void)?
 
     /// Called when a tag has been added. You should use this opportunity to update your local list of selected items.
     open var onDidAddTag: ((WSTagsField, _ tag: WSTag) -> Void)?
@@ -171,7 +171,7 @@ open class WSTagsField: UIView {
      * not using Autolayout, you should use this method to update the
      * frames to make sure the tag view still fits.
      */
-    open var onDidChangeHeightTo: ((WSTagsField, _ height: CGFloat) -> Void)?
+    @objc open var onDidChangeHeightTo: ((WSTagsField, _ height: CGFloat) -> Void)?
 
     // MARK: -
 
@@ -422,7 +422,7 @@ open class WSTagsField: UIView {
         repositionViews()
     }
 
-    open func removeTags() {
+    @objc open func removeTags() {
         self.tags.enumerated().reversed().forEach { index, tag in
             removeTagAtIndex(index)
         }
@@ -444,7 +444,7 @@ open class WSTagsField: UIView {
 
     // MARK: - Actions
 
-    open func onTextFieldDidChange(_ sender: AnyObject) {
+	@objc open func onTextFieldDidChange(_ sender: AnyObject) {
         if let didChangeTextEvent = onDidChangeText {
             didChangeTextEvent(self, textField.text)
         }
